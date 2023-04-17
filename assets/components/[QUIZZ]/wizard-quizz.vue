@@ -48,8 +48,6 @@ export default {
             }
 
             window.scrollTo(0, 0);
-
-
         }
     }
 };
@@ -156,72 +154,85 @@ export default {
         </b-card-body>
     </b-card>
 
-    <b-row v-else>
-        <b-col xxl="4">
-            <b-card no-body class="border card-border-success">
-                <b-card-header>
-                    <span class="float-end text-success"><b>100%</b></span>
-                    <h6 class="card-title mb-0">
-                        Quality Forcast
-                        <b-badge variant="success" class="align-middle fs-10">Excellent</b-badge>
-                    </h6>
-                </b-card-header>
-                <b-card-body>
-                    <p class="card-text">They all have something to say beyond the words on the page. They
-                        can come across as casual or neutral, exotic or graphic. Cosby sweater eu banh mi,
-                        qui irure terry richardson ex squid.</p>
-                    <div class="text-end">
-                        <b-link href="javascript:void(0);" class="link-success fw-medium">
-                            Read More
-                            <i class="ri-arrow-right-line align-middle"></i>
-                        </b-link>
-                    </div>
-                </b-card-body>
-            </b-card>
-        </b-col>
-        <b-col xxl="4">
-            <b-card no-body class="border card-border-warning">
-                <b-card-header>
-                    <span class="float-end text-warning"><b>75%</b></span>
-                    <h6 class="card-title mb-0">
-                        Handle to Forcast
-                        <span class="badge bg-warning text-light align-middle fs-10">Medium</span>
-                    </h6>
-                </b-card-header>
-                <b-card-body>
-                    <p class="card-text">Whether article spirits new her covered hastily sitting her. Money
-                        witty books nor son add build on the card Chicken age had evening believe but
-                        proceed pretend mrs.</p>
-                    <div class="text-end">
-                        <b-link href="javascript:void(0);" class="link-warning fw-medium">
-                            Read More
-                            <i class="ri-arrow-right-line align-middle"></i>
-                        </b-link>
-                    </div>
-                </b-card-body>
-            </b-card>
-        </b-col>
-        <b-col xxl="4">
-            <b-card no-body class="border card-border-danger">
-                <b-card-header>
-                    <span class="float-end text-danger"><b>40%</b></span>
-                    <h6 class="card-title mb-0">
-                        Handle to Forcast
-                        <b-badge variant="danger" class="align-middle fs-10">Poor</b-badge>
-                    </h6>
-                </b-card-header>
-                <b-card-body>
-                    <p class="card-text">Whether article spirits new her covered hastily sitting her. Money
-                        witty books nor son add build on the card Chicken age had evening believe but
-                        proceed pretend mrs.</p>
-                    <div class="text-end">
-                        <b-link href="javascript:void(0);" class="link-danger fw-medium">
-                            Read More
-                            <i class="ri-arrow-right-line align-middle"></i>
-                        </b-link>
-                    </div>
-                </b-card-body>
-            </b-card>
-        </b-col>
-    </b-row>
+    <template v-else>
+        <b-row>
+            <b-col xxl="4">
+                <b-card no-body class="border card-border-success">
+                    <b-card-header>
+                        <span class="float-end text-success"><b>100%</b></span>
+                        <h6 class="card-title mb-0">
+                            Quality Forcast
+                            <b-badge variant="success" class="align-middle fs-10">Excellent</b-badge>
+                        </h6>
+                    </b-card-header>
+                    <b-card-body>
+                        <p class="card-text">They all have something to say beyond the words on the page. They
+                            can come across as casual or neutral, exotic or graphic. Cosby sweater eu banh mi,
+                            qui irure terry richardson ex squid.</p>
+                        <div class="text-end">
+                            <b-link href="javascript:void(0);" class="link-success fw-medium">
+                                Read More
+                                <i class="ri-arrow-right-line align-middle"></i>
+                            </b-link>
+                        </div>
+                    </b-card-body>
+                </b-card>
+            </b-col>
+            <b-col xxl="4">
+                <b-card no-body class="border card-border-warning">
+                    <b-card-header>
+                        <span class="float-end text-warning"><b>75%</b></span>
+                        <h6 class="card-title mb-0">
+                            Handle to Forcast
+                            <span class="badge bg-warning text-light align-middle fs-10">Medium</span>
+                        </h6>
+                    </b-card-header>
+                    <b-card-body>
+                        <p class="card-text">Whether article spirits new her covered hastily sitting her. Money
+                            witty books nor son add build on the card Chicken age had evening believe but
+                            proceed pretend mrs.</p>
+                        <div class="text-end">
+                            <b-link href="javascript:void(0);" class="link-warning fw-medium">
+                                Read More
+                                <i class="ri-arrow-right-line align-middle"></i>
+                            </b-link>
+                        </div>
+                    </b-card-body>
+                </b-card>
+            </b-col>
+            <b-col xxl="4">
+                <b-card no-body class="border card-border-danger">
+                    <b-card-header>
+                        <span class="float-end text-danger"><b>40%</b></span>
+                        <h6 class="card-title mb-0">
+                            Handle to Forcast
+                            <b-badge variant="danger" class="align-middle fs-10">Poor</b-badge>
+                        </h6>
+                    </b-card-header>
+                    <b-card-body>
+                        <p class="card-text">Whether article spirits new her covered hastily sitting her. Money
+                            witty books nor son add build on the card Chicken age had evening believe but
+                            proceed pretend mrs.</p>
+                        <div class="text-end">
+                            <b-link href="javascript:void(0);" class="link-danger fw-medium">
+                                Read More
+                                <i class="ri-arrow-right-line align-middle"></i>
+                            </b-link>
+                        </div>
+                    </b-card-body>
+                </b-card>
+            </b-col>
+        </b-row>
+
+        <b-row>
+            <b-col lg="12">
+                <div class="mb-3">
+                    <label class="form-label" for="prenom-input">Votre avis nous intéresse !</label>
+                    <b-form-textarea id="textarea" v-model="datas.message"
+                        placeholder="Avez-vous des recommandations à faire, des modifications ou une fonctionnalité qui vous intéresse pou améliorer notre plateforme E-TAWJIHI ?"
+                        rows="10" max-rows="20"></b-form-textarea>
+                </div>
+            </b-col>
+        </b-row>
+    </template>
 </template>
