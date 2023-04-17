@@ -17,19 +17,26 @@ export default {
 </script>
 
 <template>
-  <b-row>
-    <b-col cols="12">
+  <!-- start page title -->
+  <div class="row">
+    <div class="col-12">
       <div class="page-title-box d-sm-flex align-items-center justify-content-between">
         <h4 class="mb-sm-0">{{ title }}</h4>
 
         <div class="page-title-right">
           <ol class="breadcrumb m-0">
-            <li class="breadcrumb-item" v-for="(item, index) in items" :key="index" :class="{ active: item[0] }">
-              <b-link href="javascript: void(0);">{{ item.text }}</b-link>
+            <li
+              class="breadcrumb-item"
+              v-for="(item, index) in items"
+              :key="index"
+              :class="{ active: item[0] }"
+            >
+              <a href="javascript: void(0);">{{ item.text }}</a>
             </li>
           </ol>
         </div>
       </div>
-    </b-col>
-  </b-row>
+    </div>
+  </div>
+  <!-- end page title -->
 </template>

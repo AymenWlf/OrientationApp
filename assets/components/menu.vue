@@ -1,14 +1,10 @@
 <script>
-import {
-  layoutComputed
-} from "../state/helpers";
-import {
-  SimpleBar
-} from "simplebar-vue3";
+import { layoutComputed } from "../state/helpers";
+import { SimpleBar } from "simplebar-vue3";
 
 export default {
   components: {
-    SimpleBar
+    SimpleBar,
   },
   data() {
     return {
@@ -37,19 +33,20 @@ export default {
   mounted() {
     if (document.querySelectorAll(".navbar-nav .collapse")) {
       let collapses = document.querySelectorAll(".navbar-nav .collapse");
-
       collapses.forEach((collapse) => {
         // Hide sibling collapses on `show.bs.collapse`
         collapse.addEventListener("show.bs.collapse", (e) => {
           e.stopPropagation();
           let closestCollapse = collapse.parentElement.closest(".collapse");
           if (closestCollapse) {
-            let siblingCollapses =
-              closestCollapse.querySelectorAll(".collapse");
+            let siblingCollapses = closestCollapse.querySelectorAll(".collapse");
             siblingCollapses.forEach((siblingCollapse) => {
               if (siblingCollapse.classList.contains("show")) {
+                let aChild = siblingCollapse.parentNode.firstChild;
+                if (aChild.hasAttribute("aria-expanded")) {
+                  aChild.setAttribute("aria-expanded", "false");
+                }
                 siblingCollapse.classList.remove("show");
-                siblingCollapse.parentElement.firstChild.setAttribute("aria-expanded", "false");
               }
             });
           } else {
@@ -68,15 +65,15 @@ export default {
             };
             let siblings = getSiblings(collapse.parentElement);
             siblings.forEach((item) => {
-              if (item.childNodes.length > 2) {
+              if (item.childNodes.length > 2)
                 item.firstElementChild.setAttribute("aria-expanded", "false");
-                item.firstElementChild.classList.remove("active");
-              }
               let ids = item.querySelectorAll("*[id]");
               ids.forEach((item1) => {
+                let aChild = item1.parentNode.firstChild;
+                if (aChild.hasAttribute("aria-expanded")) {
+                  aChild.setAttribute("aria-expanded", "false");
+                }
                 item1.classList.remove("show");
-                item1.parentElement.firstChild.setAttribute("aria-expanded", "false");
-                item1.parentElement.firstChild.classList.remove("active");
                 if (item1.childNodes.length > 2) {
                   let val = item1.querySelectorAll("ul li a");
 
@@ -96,8 +93,7 @@ export default {
           let childCollapses = collapse.querySelectorAll(".collapse");
           childCollapses.forEach((childCollapse) => {
             let childCollapseInstance = childCollapse;
-            childCollapseInstance.classList.remove("show");
-            childCollapseInstance.parentElement.firstChild.setAttribute("aria-expanded", "false");
+            childCollapseInstance.hide();
           });
         });
       });
@@ -111,30 +107,39 @@ export default {
         const currentPosition = document.getElementsByClassName("mm-active")[0].offsetTop;
         if (currentPosition > 500)
           if (this.$refs.isSimplebar)
-            this.$refs.isSimplebar.value.getScrollElement().scrollTop = currentPosition + 300;
+            this.$refs.isSimplebar.value.getScrollElement().scrollTop =
+              currentPosition + 300;
       }
     },
 
     initActiveMenu(ele) {
       setTimeout(() => {
         if (document.querySelector("#navbar-nav")) {
-          let a = document.querySelector("#navbar-nav").querySelector('[href="' + ele + '"]');
+          let a = document
+            .querySelector("#navbar-nav")
+            .querySelector('[href="' + ele + '"]');
+
           if (a) {
             a.classList.add("active");
             let parentCollapseDiv = a.closest(".collapse.menu-dropdown");
             if (parentCollapseDiv) {
               parentCollapseDiv.classList.add("show");
               parentCollapseDiv.parentElement.children[0].classList.add("active");
-              parentCollapseDiv.parentElement.children[0].setAttribute("aria-expanded", "true");
+              parentCollapseDiv.parentElement.children[0].setAttribute(
+                "aria-expanded",
+                "true"
+              );
               if (parentCollapseDiv.parentElement.closest(".collapse.menu-dropdown")) {
-                parentCollapseDiv.parentElement.closest(".collapse").classList.add("show");
-                if (parentCollapseDiv.parentElement.closest(".collapse").previousElementSibling)
-                  parentCollapseDiv.parentElement.closest(".collapse").previousElementSibling.classList.add("active");
-                const grandparent = parentCollapseDiv.parentElement.closest(".collapse").previousElementSibling.parentElement.closest(".collapse");
-                if (grandparent && grandparent && grandparent.previousElementSibling) {
-                  grandparent.previousElementSibling.classList.add("active");
-                  grandparent.classList.add("show");
-                }
+                parentCollapseDiv.parentElement
+                  .closest(".collapse")
+                  .classList.add("show");
+                if (
+                  parentCollapseDiv.parentElement.closest(".collapse")
+                    .previousElementSibling
+                )
+                  parentCollapseDiv.parentElement
+                    .closest(".collapse")
+                    .previousElementSibling.classList.add("active");
               }
             }
           }
@@ -146,41 +151,181 @@ export default {
 </script>
 
 <template>
-  <b-container fluid>
+  <div class="container-fluid">
     <div id="two-column-menu"></div>
 
     <template v-if="layoutType === 'twocolumn'">
-    </template>
-
-    <template v-else>
-      <ul class="navbar-nav h-100" id="navbar-nav">
+      <SimpleBar class="navbar-nav" id="navbar-nav">
         <li class="menu-title">
-          <span data-key="t-menu">Menu</span>
+          <span data-key="t-menu">MENU</span>
         </li>
         <li class="nav-item">
-          <b-link class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button"
-            aria-expanded="false" aria-controls="sidebarDashboards">
+          <a
+            class="nav-link menu-link"
+            href="#sidebarDashboards"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sidebarDashboards"
+          >
             <i class="ri-dashboard-2-line"></i>
-            <span data-key="t-dashboards">Dashboard</span>
-          </b-link>
+            <span data-key="t-dashboards"> Dashboard</span>
+          </a>
           <div class="collapse menu-dropdown" id="sidebarDashboards">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
-                <router-link to="#" class="nav-link custom-abc" data-key="t-analytics">
-                  Analytics
-                </router-link>
-              </li>
-              <li class="nav-item">
-                <router-link to="#" class="nav-link" data-key="t-job">
-                  Job
-                  <b-badge variant="success" class="badge-pill" data-key="t-new">New</b-badge>
+                <router-link
+                  to="/app/dashboard/projects"
+                  class="nav-link"
+                  data-key="t-projects"
+                >
+                  Projects
                 </router-link>
               </li>
             </ul>
           </div>
         </li>
-        <!-- end Dashboard Menu -->
+      </SimpleBar>
+    </template>
+
+    <template v-else>
+      <ul class="navbar-nav h-100" id="navbar-nav">
+        <li class="menu-title">
+          <span data-key="t-menu">MENU</span>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link menu-link" to="/app/dashboard/">
+            <i class="mdi mdi-phone-classic"></i>
+            <span data-key="t-dashboards">Tableau de bord</span>
+          </router-link>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link menu-link" href="/#sidebarDashboards" data-bs-toggle="collapse" role="button"
+            aria-expanded="false" aria-controls="sidebarDashboards">
+            <i class="ri-dashboard-2-line"></i>
+            <span data-key="t-dashboards">Tableau de bord</span>
+          </a>
+          <div class="collapse menu-dropdown" id="sidebarDashboards">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <router-link to="/app/dashboard/analytics" class="nav-link custom-abc" data-key="t-analytics">
+                  Statistiques
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </li> -->
+        <li class="menu-title">
+          <span data-key="t-menu">Notarial</span>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link menu-link" to="/app/rdv">
+            <i class="mdi mdi-phone-classic"></i>
+            <span data-key="t-rdv">Rendez-Vous</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link menu-link" to="/app/client">
+            <i class="mdi mdi-account-box-multiple"></i>
+            <span data-key="t-client">Clients</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link menu-link" to="/app/societe">
+            <i class="mdi mdi-office-building"></i>
+            <span data-key="t-societe">Sociétés</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link menu-link"
+            href="/#sidebarDossier"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sidebarDossier"
+          >
+            <i class="mdi mdi-folder"></i>
+            <span data-key="t-dossier">Dossiers</span>
+          </a>
+          <div class="collapse menu-dropdown" id="sidebarDossier">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <router-link
+                  to="/app/dossier/consultation"
+                  class="nav-link custom-abc"
+                  data-key="t-consultation"
+                >
+                  Consultation
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/app/dossier/ouverture"
+                  class="nav-link custom-abc"
+                  data-key="t-consultation"
+                >
+                  Ouverture
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link menu-link" to="/app/propriete">
+            <i class="mdi mdi-home-city"></i>
+            <span data-key="t-propriete">Propriétés</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link menu-link" to="/app/cdg">
+            <i class="mdi mdi-bank"></i>
+            <span data-key="t-cdg">Affaires CDG</span>
+          </router-link>
+        </li>
+        <li class="menu-title">
+          <span data-key="t-menu">Paramètres</span>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link menu-link"
+            href="/#sidebarSettings"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sidebarSettings"
+          >
+            <i class="ri-settings-3-line"></i>
+            <span data-key="t-settings">Paramètres</span>
+          </a>
+          <div class="collapse menu-dropdown" id="sidebarSettings">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <router-link
+                  to="/app/settings/profile"
+                  class="nav-link custom-abc"
+                  data-key="t-profile"
+                >
+                  Profile & Mot de passe
+                </router-link>
+              </li>
+              <!-- <li class="nav-item">
+                <router-link
+                  to="/app/settings/collabs"
+                  class="nav-link custom-abc"
+                  data-key="t-collaborateur"
+                >
+                  Rôles
+                  <span class="badge bg-warning badge-pill" data-key="t-new"
+                    >Prochainement</span
+                  >
+                </router-link>
+              </li> -->
+            </ul>
+          </div>
+        </li>
       </ul>
     </template>
-  </b-container>
+  </div>
+  <!-- Sidebar -->
 </template>

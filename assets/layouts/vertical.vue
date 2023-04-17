@@ -7,7 +7,7 @@ import NavBar from "../components/nav-bar";
 import Menu from "../components/menu.vue";
 import RightBar from "../components/right-bar";
 import Footer from "../components/footer";
-localStorage.setItem('hoverd', false);
+localStorage.setItem("hoverd", false);
 
 /**
  * Vertical layout
@@ -29,14 +29,16 @@ export default {
   },
   methods: {
     initActiveMenu() {
-      if (document.documentElement.getAttribute('data-sidebar-size') === 'sm-hover') {
-        localStorage.setItem('hoverd', true)
-        document.documentElement.setAttribute('data-sidebar-size', 'sm-hover-active');
-      } else if (document.documentElement.getAttribute('data-sidebar-size') === 'sm-hover-active') {
-        localStorage.setItem('hoverd', false)
-        document.documentElement.setAttribute('data-sidebar-size', 'sm-hover');
+      if (document.documentElement.getAttribute("data-sidebar-size") === "sm-hover") {
+        localStorage.setItem("hoverd", true);
+        document.documentElement.setAttribute("data-sidebar-size", "sm-hover-active");
+      } else if (
+        document.documentElement.getAttribute("data-sidebar-size") === "sm-hover-active"
+      ) {
+        localStorage.setItem("hoverd", false);
+        document.documentElement.setAttribute("data-sidebar-size", "sm-hover");
       } else {
-        document.documentElement.setAttribute('data-sidebar-size', 'sm-hover');
+        document.documentElement.setAttribute("data-sidebar-size", "sm-hover");
       }
     },
     toggleMenu() {
@@ -66,44 +68,43 @@ export default {
     },
   },
   mounted() {
-    if (localStorage.getItem('hoverd') == 'true') {
-      document.documentElement.setAttribute('data-sidebar-size', 'sm-hover-active');
+    if (localStorage.getItem("hoverd") == "true") {
+      document.documentElement.setAttribute("data-sidebar-size", "sm-hover-active");
     }
-    document.getElementById('overlay').addEventListener('click', () => {
-      document.body.classList.remove('vertical-sidebar-enable')
-    })
-
+    document.getElementById("overlay").addEventListener("click", () => {
+      document.body.classList.remove("vertical-sidebar-enable");
+    });
   },
 };
 </script>
-  
+
 <template>
   <div id="layout-wrapper">
     <NavBar />
     <div>
-      <!-- ========== Left Sidebar Start ========== -->
+      <!-- ========== Left Sidebar Start Vertical ========== -->
       <!-- ========== App Menu ========== -->
       <div class="app-menu navbar-menu">
         <!-- LOGO -->
         <div class="navbar-brand-box">
           <!-- Dark Logo-->
-          <router-link to="/" class="logo logo-dark">
+          <a href="/login" class="logo logo-dark">
             <span class="logo-sm">
-              <img src="../styles/images/logo-sm.png" alt="" height="22" />
+              <img class="radius-12" src="../styles/images/logo-sm.png" alt="" height="40" />
             </span>
             <span class="logo-lg">
-              <img src="../styles/images/logo-dark.png" alt="" height="17" />
+              <img class="radius-12" src="../styles/images/logo.png" alt="" height="35" />
             </span>
-          </router-link>
+          </a>
           <!-- Light Logo-->
-          <router-link to="/" class="logo logo-light">
+          <a href="/login" class="logo logo-light">
             <span class="logo-sm">
-              <img src="../styles/images/logo-sm.png" alt="" height="22" />
+              <img class="radius-12" src="../styles/images/logo-sm.png" alt="" height="40" />
             </span>
             <span class="logo-lg">
-              <img src="../styles/images/logo-light.png" alt="" height="17" />
+              <img class="radius-12" src="../styles/images/logo.png" alt="" height="35" />
             </span>
-          </router-link>
+          </a>
           <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
             id="vertical-hover" @click="initActiveMenu">
             <i class="ri-record-circle-line"></i>
@@ -113,7 +114,6 @@ export default {
         <SimpleBar id="scrollbar" class="h-100" ref="scrollbar">
           <Menu></Menu>
         </SimpleBar>
-        <div class="sidebar-background"></div>
       </div>
       <!-- Left Sidebar End -->
       <!-- Vertical Overlay-->
@@ -126,9 +126,9 @@ export default {
     <div class="main-content">
       <div class="page-content">
         <!-- Start Content-->
-        <b-container fluid>
+        <div class="container-fluid">
           <slot />
-        </b-container>
+        </div>
       </div>
       <Footer />
     </div>
