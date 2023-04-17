@@ -30,7 +30,8 @@ export default {
                 prenom: null,
                 nom: null,
                 tel: null,
-                type_bac: null
+                type_bac: null,
+                message: null
             },
             ressources: {
                 quizz: [
@@ -251,6 +252,12 @@ export default {
                     <b-form-textarea id="textarea" v-model="datas.message"
                         placeholder="Avez-vous des recommandations à faire, des modifications ou une fonctionnalité qui vous intéresse pou améliorer notre plateforme E-TAWJIHI ?"
                         rows="10" max-rows="20"></b-form-textarea>
+                </div>
+
+                <div class="d-flex align-items-start gap-3 mt-4">
+                    <b-button type="button" variant="success" class="btn-label right ms-auto nexttab nexttab"
+                        data-nexttab="pills-info-desc-tab"><i
+                            class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Envoyer</b-button>
                 </div>
             </b-col>
         </b-row>
