@@ -13,7 +13,7 @@ export default {
     <div class="bg-overlay bg-overlay-pattern"></div>
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-8 col-sm-10">
+        <div class="col-lg-10 col-sm-10">
           <div class="text-center pt-5 pt-md-3">
             <h1 class="display-6 fw-semibold mb-3 lh-base">
               Découvrez votre filière idéale avec

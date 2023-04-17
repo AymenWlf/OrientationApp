@@ -14,38 +14,56 @@ export default {
                 nom: null,
                 tel: null,
                 type_bac: null
+            },
+            ressources: {
+                quizz: [
+                    {
+                        question: "T beau ?",
+                        choix: null
+                    },
+                    {
+                        question: "T mechant ?",
+                        choix: null
+                    },
+                    {
+                        question: "T null ?",
+                        choix: null
+                    },
+                ]
+            },
+            settings: {
+                isStarted: false,
+                done: false
             }
         };
     },
+    methods: {
+        checkInfoForm() {
+            if (!this.settings.isStarted) {
+                this.settings.isStarted = true;
+                console.log(this.datas);
+            } else {
+                this.settings.done = true;
+                console.log(this.ressources.quizz);
+            }
+
+            window.scrollTo(0, 0);
+
+
+        }
+    }
 };
 </script>
 
 <template>
-    <b-card id="Quizz" no-body>
+    <b-card v-if="!settings.done" id="Quizz" no-body>
         <b-card-header>
-            <b-card-title class="mb-0">Test de personalité</b-card-title>
+            <b-card-title class="mb-0 text-center">Test de personalité</b-card-title>
         </b-card-header>
         <b-card-body>
-            <form action="#" class="form-steps" autocomplete="off">
-                <div class="text-center pt-3 pb-4 mb-1">
-                    <h5>Test de personalité</h5>
-                </div>
-                <div id="custom-progress-bar" class="progress-nav mb-4">
-                    <div class="progress" style="height: 1px">
-                        <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                    </div>
-
-                    <ul class="nav nav-pills progress-bar-tab custom-nav" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <b-button pill variant="link" class="nav-link active" data-progressbar="custom-progress-bar"
-                                id="pills-gen-info-tab" type="button" role="tab">1</b-button>
-                        </li>
-                    </ul>
-                </div>
-
+            <form v-on:submit.prevent="checkInfoForm" class="form-steps" autocomplete="off">
                 <div class="tab-content">
-                    <div class="tab-pane fade show active" id="pills-gen-info">
+                    <div v-if="!settings.isStarted" class="tab-pane fade show active" id="pills-gen-info">
                         <div>
                             <div class="mb-4">
                                 <div>
@@ -96,64 +114,114 @@ export default {
                             </div>
                         </div>
                         <div class="d-flex align-items-start gap-3 mt-4">
-                            <b-button type="button" variant="success" class="btn-label right ms-auto nexttab nexttab"
+                            <b-button type="submit" variant="success" class="btn-label right ms-auto nexttab nexttab"
                                 data-nexttab="pills-info-desc-tab"><i
                                     class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Commencer
                                 !</b-button>
                         </div>
                     </div>
-
-                    <div class="tab-pane fade" id="pills-info-desc" role="tabpanel" aria-labelledby="pills-info-desc-tab">
-                        <div>
-                            <div class="text-center">
-                                <div class="profile-user position-relative d-inline-block mx-auto mb-2">
-                                    <img src="../../styles/images/users/user-dummy-img.jpg"
-                                        class="rounded-circle avatar-lg img-thumbnail user-profile-image"
-                                        alt="user-profile-image" />
-                                    <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
-                                        <input id="profile-img-file-input" type="file" class="profile-img-file-input"
-                                            accept="image/png, image/jpeg" />
-                                        <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
-                                            <span class="avatar-title rounded-circle bg-light text-body">
-                                                <i class="ri-camera-fill"></i>
-                                            </span>
-                                        </label>
+                    <template v-else>
+                        <div v-for="(el, i) in ressources.quizz" :key="i" class="mt-5 tab-pane fade show active"
+                            id="pills-gen-info">
+                            <div>
+                                <div class="mb-0">
+                                    <div>
+                                        <h5 class="mb-1">Question : {{ i + 1 }}</h5>
+                                        <p class="text-muted">
+                                            Choisissez oui ou non
+                                        </p>
                                     </div>
                                 </div>
-                                <h5 class="fs-14">Add Image</h5>
-                            </div>
-                            <div>
-                                <label class="form-label" for="gen-info-description-input">Description</label>
-                                <textarea class="form-control" placeholder="Enter Description"
-                                    id="gen-info-description-input" rows="2" required></textarea>
-                                <div class="invalid-feedback">Please enter a description</div>
+                                <b-row>
+                                    <b-col lg="6">
+                                        <b-form-group :id="'qst' + i" class="my-1" :label="el.question">
+                                            <b-form-radio v-model="el.choix" :name="'quizz-radio' + i"
+                                                value="Oui">Oui</b-form-radio>
+                                            <b-form-radio v-model="el.choix" :name="'quizz-radio' + i"
+                                                value="Non">Non</b-form-radio>
+                                        </b-form-group>
+                                    </b-col>
+                                </b-row>
                             </div>
                         </div>
-                        <div class="d-flex align-items-start gap-3 mt-4">
-                            <b-button variant="link" type="button" class="text-decoration-none btn-label previestab"
-                                data-previous="pills-gen-info-tab"><i
-                                    class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
-                                Back to General</b-button>
-                            <b-button type="button" variant="success" class="btn-label right ms-auto nexttab nexttab"
-                                data-nexttab="pills-success-tab"><i
-                                    class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Submit</b-button>
-                        </div>
-                    </div>
 
-                    <div class="tab-pane fade" id="pills-success" role="tabpanel" aria-labelledby="pills-success-tab">
-                        <div>
-                            <div class="text-center">
-                                <div class="mb-4">
-                                    <lottie colors="primary:#0ab39c,secondary:#405189" :options="defaultOptions"
-                                        :height="120" :width="120" />
-                                </div>
-                                <h5>Well Done !</h5>
-                                <p class="text-muted">You have Successfully Signed Up</p>
-                            </div>
+                        <div class="d-flex align-items-start gap-3 mt-4">
+                            <b-button type="submit" variant="warning" class="btn-label right ms-auto nexttab nexttab"
+                                data-nexttab="pills-info-desc-tab"><i
+                                    class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Terminer</b-button>
                         </div>
-                    </div>
+                    </template>
                 </div>
             </form>
         </b-card-body>
     </b-card>
+
+    <b-row v-else>
+        <b-col xxl="4">
+            <b-card no-body class="border card-border-success">
+                <b-card-header>
+                    <span class="float-end text-success"><b>100%</b></span>
+                    <h6 class="card-title mb-0">
+                        Quality Forcast
+                        <b-badge variant="success" class="align-middle fs-10">Excellent</b-badge>
+                    </h6>
+                </b-card-header>
+                <b-card-body>
+                    <p class="card-text">They all have something to say beyond the words on the page. They
+                        can come across as casual or neutral, exotic or graphic. Cosby sweater eu banh mi,
+                        qui irure terry richardson ex squid.</p>
+                    <div class="text-end">
+                        <b-link href="javascript:void(0);" class="link-success fw-medium">
+                            Read More
+                            <i class="ri-arrow-right-line align-middle"></i>
+                        </b-link>
+                    </div>
+                </b-card-body>
+            </b-card>
+        </b-col>
+        <b-col xxl="4">
+            <b-card no-body class="border card-border-warning">
+                <b-card-header>
+                    <span class="float-end text-warning"><b>75%</b></span>
+                    <h6 class="card-title mb-0">
+                        Handle to Forcast
+                        <span class="badge bg-warning text-light align-middle fs-10">Medium</span>
+                    </h6>
+                </b-card-header>
+                <b-card-body>
+                    <p class="card-text">Whether article spirits new her covered hastily sitting her. Money
+                        witty books nor son add build on the card Chicken age had evening believe but
+                        proceed pretend mrs.</p>
+                    <div class="text-end">
+                        <b-link href="javascript:void(0);" class="link-warning fw-medium">
+                            Read More
+                            <i class="ri-arrow-right-line align-middle"></i>
+                        </b-link>
+                    </div>
+                </b-card-body>
+            </b-card>
+        </b-col>
+        <b-col xxl="4">
+            <b-card no-body class="border card-border-danger">
+                <b-card-header>
+                    <span class="float-end text-danger"><b>40%</b></span>
+                    <h6 class="card-title mb-0">
+                        Handle to Forcast
+                        <b-badge variant="danger" class="align-middle fs-10">Poor</b-badge>
+                    </h6>
+                </b-card-header>
+                <b-card-body>
+                    <p class="card-text">Whether article spirits new her covered hastily sitting her. Money
+                        witty books nor son add build on the card Chicken age had evening believe but
+                        proceed pretend mrs.</p>
+                    <div class="text-end">
+                        <b-link href="javascript:void(0);" class="link-danger fw-medium">
+                            Read More
+                            <i class="ri-arrow-right-line align-middle"></i>
+                        </b-link>
+                    </div>
+                </b-card-body>
+            </b-card>
+        </b-col>
+    </b-row>
 </template>
