@@ -6,6 +6,23 @@ export default {
     components: {
         Multiselect
     },
+    props: {
+        IsDone: {
+            type: Boolean,
+            required: true,
+            sync: true
+        },
+        Nom: {
+            type: String,
+            required: true,
+            sync: true
+        },
+        Prenom: {
+            type: String,
+            required: true,
+            sync: true
+        }
+    },
     data() {
         return {
             datas: {
@@ -41,9 +58,12 @@ export default {
         checkInfoForm() {
             if (!this.settings.isStarted) {
                 this.settings.isStarted = true;
+                this.$emit('update-prenom', this.datas.prenom);
+                this.$emit('update-nom', this.datas.nom);
                 console.log(this.datas);
             } else {
                 this.settings.done = true;
+                this.$emit('update-is-done', true);
                 console.log(this.ressources.quizz);
             }
 
