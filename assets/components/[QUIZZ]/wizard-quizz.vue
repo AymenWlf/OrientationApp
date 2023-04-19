@@ -117,7 +117,8 @@ export default {
             },
             settings: {
                 isStarted: false,
-                done: false
+                done: false,
+                test: true
             }
         };
     },
@@ -137,9 +138,13 @@ export default {
                 this.settings.done = true;
                 this.$emit('update-is-done', true);
                 console.log(this.ressources.quizz);
+                var formData = {
+                    quizz: this.ressources.quizz,
+                    email: this.datas.email
+                }
 
                 axios
-                    .post("/api/results", this.ressources.quizz)
+                    .post("/api/results", formData)
                     .then((res) => {
                         console.log(res.data);
                         var result = this.ressources.resultat;
@@ -177,6 +182,14 @@ export default {
             axios
                 .post("/api/sendMessage", this.datas)
                 .then((res) => {
+                    this.datas.message = null
+                    this.$notify({
+                        title: "Envoyé !",
+                        text:
+                            "Merci pour votre message !",
+                        type: "success",
+                        duration: 10000,
+                    });
                     console.log(res.data);
                 });
         }
@@ -239,7 +252,7 @@ export default {
                             <div class="mb-3">
                                 <label class="form-label" for="bac-input">Type de votre BAC</label>
                                 <Multiselect id="bac-input" required v-model="datas.type_bac" :close-on-select="true"
-                                    :searchable="true" :options="['aymen', 'oyejd']" />
+                                    :searchable="true" :options="['Sciences Physiques et Chimiques']" />
                             </div>
                         </div>
                         <div class="d-flex align-items-start gap-3 mt-4">

@@ -38,6 +38,7 @@ import AOS from 'aos';
 import BootstrapVue3 from 'bootstrap-vue-3';
 import vClickOutside from "click-outside-vue3";
 import Maska from 'maska';
+import Notifications from '@kyvg/vue3-notification'
 
 import VueFeather from 'vue-feather';
 
@@ -48,4 +49,5 @@ createApp(MyApp)
     .use(BootstrapVue3)
     .component(VueFeather.type, VueFeather)
     .use(Maska)
+    .use(Notifications)
     .use(vClickOutside).mount('#app');

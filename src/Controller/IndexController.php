@@ -2,6 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Message;
+use App\Entity\Resultat;
+use App\Entity\Utilisateur;
+use App\Repository\UtilisateurRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -9,6 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class IndexController extends AbstractController
 {
+
+    public function __construct(private EntityManagerInterface $em, private UtilisateurRepository $utilsRepo)
+    {
+    }
     const CATEGORIE_PAR_BAC = [
         "Sciences Mathématiques A et B" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Informatique", "Physique", "Économie", "Gestion", "Droit"],
         "Sciences Physiques et Chimiques" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Physique", "Chimie", "Électronique", "Informatique", "Économie", "Gestion", "Droit"],
@@ -33,11 +42,6 @@ class IndexController extends AbstractController
         "La filière de gestion forme des professionnels capables de gérer efficacement les entreprises et les organisations dans un contexte économique complexe.",
         "La filière de droit permet d'acquérir les connaissances nécessaires pour comprendre les lois et les réglementations qui régissent notre société et de développer des compétences en analyse juridique."
     ];
-
-
-
-
-
 
     const TYPE_BAC = [
         "Sciences Mathématiques A et B",
@@ -120,7 +124,20 @@ class IndexController extends AbstractController
     public function dataUser(Request $request): Response
     {
         $data = json_decode($request->getContent(), true);
-        dd($data);
+
+        $utilisateur = $this->utilsRepo->findOneBy(['email' => $data['email']]);
+        if (!$utilisateur) {
+            $utilisateur = new Utilisateur();
+        }
+
+        $utilisateur->setNom($data["nom"]);
+        $utilisateur->setPrenom($data["prenom"]);
+        $utilisateur->setTel($data["tel"]);
+        $utilisateur->setEmail($data["email"]);
+
+        $this->em->persist($utilisateur);
+        $this->em->flush();
+
         return $this->json($data, Response::HTTP_OK, []);
     }
 
@@ -128,7 +145,18 @@ class IndexController extends AbstractController
     public function sendMessage(Request $request): Response
     {
         $data = json_decode($request->getContent(), true);
-        dd($data['message']);
+        $utils = $this->utilsRepo->findOneBy(['email' => $data['email']]);
+        $message = new Message();
+
+        if ($utils) {
+            $message
+                ->setMessage($data['message'])
+                ->setUser($utils);
+        }
+
+        $this->em->persist($message);
+        $this->em->flush();
+
         return $this->json($data, Response::HTTP_OK, []);
     }
 
@@ -138,14 +166,50 @@ class IndexController extends AbstractController
         $data = json_decode($request->getContent(), true);
         $reponses = [];
 
+        // dd($data);
         //Tableau de reponses;
-        foreach ($data as $el) {
+        foreach ($data['quizz'] as $el) {
             $reponses[] = intval($el["choix"]);
         }
 
         $resultat = $this->TraitementReponses($reponses);
+        $results = new Resultat();
+        $cpt = 0;
+
+        foreach ($resultat as $el) {
+            switch ($cpt) {
+                case 0:
+                    $results->setFilliere($el['filliere']);
+                    $results->setDescr($el['desc']);
+                    $results->setPerc($el['perc']);
+                    break;
+                case 1:
+                    $results->setFilliere2($el['filliere']);
+                    $results->setDescr2($el['desc']);
+                    $results->setPerc2($el['perc']);
+                    break;
+                case 2:
+                    $results->setFilliere3($el['filliere']);
+                    $results->setDescr3($el['desc']);
+                    $results->setPerc3($el['perc']);
+                    break;
+
+                default:
+                    # code...
+                    break;
+            }
+
+            $cpt++;
+        }
+
+        $results->setUtilisateur($this->utilsRepo->findOneBy(['email' => $data['email']]));
+
+        $this->em->persist($results);
+        $this->em->flush();
+
         return $this->json($resultat, Response::HTTP_OK, []);
     }
+
     #[Route('/', name: 'app_index')]
     public function index(): Response
     {
