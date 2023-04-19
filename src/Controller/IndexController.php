@@ -116,6 +116,22 @@ class IndexController extends AbstractController
         return $resultat;
     }
 
+    #[Route('/api/dataUser', name: 'api.dataUser', methods: ['POST'])]
+    public function dataUser(Request $request): Response
+    {
+        $data = json_decode($request->getContent(), true);
+        dd($data);
+        return $this->json($data, Response::HTTP_OK, []);
+    }
+
+    #[Route('/api/sendMessage', name: 'api.sendMessage', methods: ['POST'])]
+    public function sendMessage(Request $request): Response
+    {
+        $data = json_decode($request->getContent(), true);
+        dd($data['message']);
+        return $this->json($data, Response::HTTP_OK, []);
+    }
+
     #[Route('/api/results', name: 'api.results', methods: ['POST'])]
     public function results(Request $request): Response
     {
@@ -130,7 +146,6 @@ class IndexController extends AbstractController
         $resultat = $this->TraitementReponses($reponses);
         return $this->json($resultat, Response::HTTP_OK, []);
     }
-
     #[Route('/', name: 'app_index')]
     public function index(): Response
     {

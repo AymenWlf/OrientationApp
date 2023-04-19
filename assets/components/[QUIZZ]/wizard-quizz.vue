@@ -128,6 +128,11 @@ export default {
                 this.$emit('update-prenom', this.datas.prenom);
                 this.$emit('update-nom', this.datas.nom);
                 console.log(this.datas);
+                axios
+                    .post("/api/dataUser", this.datas)
+                    .then((res) => {
+                        console.log(res.data);
+                    });
             } else {
                 this.settings.done = true;
                 this.$emit('update-is-done', true);
@@ -163,14 +168,17 @@ export default {
                             cpt++;
                         });
 
-                    })
-                    .catch((err) => {
-                    })
-                    .finally(() => {
                     });
             }
 
             window.scrollTo(0, 0);
+        },
+        sendMessage() {
+            axios
+                .post("/api/sendMessage", this.datas)
+                .then((res) => {
+                    console.log(res.data);
+                });
         }
     }
 };
@@ -256,9 +264,9 @@ export default {
                                 <b-row>
                                     <b-col lg="12">
                                         <b-form-group :id="'qst' + i" class="my-1" :label="el.question">
-                                            <b-form-radio v-model="el.choix" :name="'quizz-radio' + i"
+                                            <b-form-radio required v-model="el.choix" :name="'quizz-radio' + i"
                                                 value="1">Oui</b-form-radio>
-                                            <b-form-radio v-model="el.choix" :name="'quizz-radio' + i"
+                                            <b-form-radio required v-model="el.choix" :name="'quizz-radio' + i"
                                                 value="0">Non</b-form-radio>
                                         </b-form-group>
                                     </b-col>
@@ -351,8 +359,8 @@ export default {
                 </div>
 
                 <div class="d-flex align-items-start gap-3 mt-4">
-                    <b-button type="button" variant="success" class="btn-label right ms-auto nexttab nexttab"
-                        data-nexttab="pills-info-desc-tab"><i
+                    <b-button @click="sendMessage()" type="button" variant="success"
+                        class="btn-label right ms-auto nexttab nexttab" data-nexttab="pills-info-desc-tab"><i
                             class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Envoyer</b-button>
                 </div>
             </b-col>
