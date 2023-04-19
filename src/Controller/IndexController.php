@@ -3,137 +3,12 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class IndexController extends AbstractController
 {
-    // const TYPE_BAC = [
-    //     "Sciences Expérimentales",
-    //     "Sciences Mathématiques",
-    //     "Sciences et Technologies",
-    //     "Sciences et Technologies de l'Industrie et du Développement Durable",
-    //     "Sciences Économiques",
-    //     "Sciences de Gestion",
-    //     "Lettres et Sciences Humaines",
-    //     "Sciences et Technologies Électriques",
-    //     "Sciences et Technologies Mécaniques",
-    //     "Sciences et Technologies des Arts Appliqués",
-    //     "Sciences et Technologies Agronomiques",
-    //     "Baccalauréat Professionnel"
-    // ];
-
-    // const FILLIERE_PAR_BAC = [
-    //     "Sciences Expérimentales" => [
-    //         "Médecine",
-    //         "Pharmacie",
-    //         "Dentisterie",
-    //         "Biologie",
-    //         "Physique",
-    //         "Chimie",
-    //         "Mathématiques",
-    //         "Sciences de la Terre",
-    //         "Sciences Agronomiques",
-    //         "Sciences et Technologies Électriques",
-    //         "Sciences et Technologies Mécaniques",
-    //         "Sciences et Technologies de l'Industrie et du Développement Durable"
-    //     ],
-    //     "Sciences Mathématiques" => [
-    //         "Mathématiques",
-    //         "Physique",
-    //         "Chimie",
-    //         "Informatique",
-    //         "Sciences de la Terre",
-    //         "Sciences et Technologies Électriques",
-    //         "Sciences et Technologies Mécaniques",
-    //         "Sciences et Technologies de l'Industrie et du Développement Durable"
-    //     ],
-    //     "Sciences et Technologies" => [
-    //         "Informatique",
-    //         "Génie Civil",
-    //         "Génie Mécanique",
-    //         "Génie Électrique",
-    //         "Génie Industriel",
-    //         "Génie Informatique",
-    //         "Génie des Procédés",
-    //         "Génie des Matériaux",
-    //         "Génie Énergétique",
-    //         "Sciences et Technologies Agronomiques",
-    //         "Sciences et Technologies des Arts Appliqués"
-    //     ],
-    //     "Sciences et Technologies de l'Industrie et du Développement Durable" => [
-    //         "Génie Civil",
-    //         "Génie Mécanique",
-    //         "Génie Électrique",
-    //         "Génie Industriel",
-    //         "Génie Informatique",
-    //         "Génie des Procédés",
-    //         "Génie des Matériaux",
-    //         "Génie Énergétique",
-    //         "Sciences et Technologies Agronomiques",
-    //         "Sciences et Technologies des Arts Appliqués"
-    //     ],
-    //     "Sciences Économiques" => [
-    //         "Économie",
-    //         "Gestion",
-    //         "Commerce",
-    //         "Finance",
-    //         "Marketing",
-    //         "Management"
-    //     ],
-    //     "Sciences de Gestion" => [
-    //         "Économie",
-    //         "Gestion",
-    //         "Commerce",
-    //         "Finance",
-    //         "Marketing",
-    //         "Management"
-    //     ],
-    //     "Lettres et Sciences Humaines" => [
-    //         "Lettres",
-    //         "Langues",
-    //         "Histoire",
-    //         "Géographie",
-    //         "Sociologie",
-    //         "Philosophie",
-    //         "Anthropologie",
-    //         "Archéologie",
-    //         "Communication"
-    //     ],
-    //     "Sciences et Technologies Électriques" => [
-    //         "Électrotechnique",
-    //         "Électronique",
-    //         "Informatique",
-    //         "Automatique",
-    //         "Énergie"
-    //     ],
-    //     "Sciences et Technologies Mécaniques" => [
-    //         "Mécanique",
-    //         "Énergie",
-    //         "Construction mécanique",
-    //         "Conception et fabrication mécanique",
-    //         "Maintenance industrielle"
-    //     ],
-    //     "Sciences et Technologies des Arts Appliqués" => [
-    //         "Design graphique",
-    //         "Design d'espace",
-    //         "Design de produits",
-    //         "Design textile",
-    //         "Design de mode"
-    //     ],
-    //     "Sciences et Technologies Agronomiques" => [
-    //         "Agronomie",
-    //         "Agro-industrie",
-    //         "Élevage",
-    //         "Pêche et aquaculture",
-    //         "Foresterie",
-    //         "Environnement"
-    //     ],
-    //     "Baccalauréat Professionnel" => [
-    //         "Génie"
-    //     ]
-    // ];
-
     const CATEGORIE_PAR_BAC = [
         "Sciences Mathématiques A et B" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Informatique", "Physique", "Économie", "Gestion", "Droit"],
         "Sciences Physiques et Chimiques" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Physique", "Chimie", "Électronique", "Informatique", "Économie", "Gestion", "Droit"],
@@ -146,6 +21,23 @@ class IndexController extends AbstractController
         "Sciences et Technologies Électriques" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Électricité", "Électronique", "Informatique", "Économie", "Gestion", "Droit"],
         "Sciences et Technologies Mécaniques" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Mécanique", "Électronique", "Informatique", "Économie", "Gestion", "Droit"]
     ];
+
+    const DESC_FILLIERES_SPC = [
+        "Cette filière regroupe l'ensemble des disciplines scientifiques et technologiques qui permettent de comprendre le fonctionnement de notre univers et de développer de nouvelles technologies.",
+        "Cette filière forme des ingénieurs capables de concevoir, de réaliser et de gérer des projets techniques et scientifiques.",
+        "La filière de physique permet d'étudier les lois de l'univers et d'acquérir les connaissances nécessaires pour comprendre et résoudre des problèmes complexes.",
+        "La filière de chimie permet de comprendre la structure et les propriétés des atomes et des molécules, ainsi que les réactions chimiques qui se produisent entre eux.",
+        "La filière d'électronique permet de comprendre les principes de fonctionnement des systèmes électroniques et de développer de nouveaux dispositifs et technologies.",
+        "La filière d'informatique forme des professionnels capables de concevoir, de développer et de gérer des systèmes informatiques complexes.",
+        "La filière d'économie permet de comprendre le fonctionnement de l'économie mondiale et de développer des compétences en gestion et en analyse économique.",
+        "La filière de gestion forme des professionnels capables de gérer efficacement les entreprises et les organisations dans un contexte économique complexe.",
+        "La filière de droit permet d'acquérir les connaissances nécessaires pour comprendre les lois et les réglementations qui régissent notre société et de développer des compétences en analyse juridique."
+    ];
+
+
+
+
+
 
     const TYPE_BAC = [
         "Sciences Mathématiques A et B",
@@ -161,37 +53,36 @@ class IndexController extends AbstractController
     ];
 
     const QST_1 = [
-        "Aimez-vous résoudre des problèmes mathématiques complexes ?" => [2, 2, 0, 2, 0, 0, 0],
-        "Êtes-vous intéressé par les mathématiques appliquées à l'économie et à la finance ?" => [2, 2, 0, 1, 0, 0, 0],
-        "Avez-vous une curiosité pour la physique et la chimie ?" => [0, 0, 0, 2, 0, 0, 0],
-        "Êtes-vous doué pour la programmation informatique ?" => [0, 2, 2, 0, 0, 0, 0],
-        "Aimez-vous apprendre les langues étrangères et les cultures ?" => [0, 0, 0, 0, 0, 0, 2],
-        "Êtes-vous intéressé par les phénomènes sociaux et les sciences humaines ?" => [0, 0, 0, 0, 2, 2, 0],
-        "Êtes-vous créatif et intéressé par les arts ?" => [0, 0, 0, 0, 0, 2, 0],
-        "Avez-vous une curiosité pour l'histoire et la géographie ?" => [0, 0, 0, 0, 2, 0, 0],
-        "Aimez-vous les langues et les cultures étrangères ?" => [0, 0, 0, 0, 0, 0, 2],
-        "Êtes-vous intéressé par l'économie et la finance ?" => [0, 1, 0, 0, 2, 2, 0],
-        "Avez-vous une curiosité pour la biologie et la santé ?" => [0, 0, 0, 1, 0, 0, 0],
-        "Êtes-vous doué pour la compréhension de textes juridiques complexes ?" => [0, 0, 0, 0, 0, 0, 2],
-        "Aimez-vous les sciences politiques et les relations internationales ?" => [0, 0, 0, 2, 2, 0, 0],
-        "Êtes-vous intéressé par les sciences de l'environnement et le développement durable ?" => [2, 0, 0, 0, 0, 0, 0],
-        "Avez-vous une curiosité pour l'architecture et l'urbanisme ?" => [0, 0, 0, 0, 0, 0, 2]
+        "Aimez-vous résoudre des problèmes mathématiques complexes ?" => [2, 2, 0, 2, 1, 1, 0, 0, 0],
+        "Êtes-vous intéressé par les mathématiques appliquées à l'économie et à la finance ?" => [2, 2, 0, 1, 1, 1, 2, 2, 0],
+        "Avez-vous une curiosité pour la physique et la chimie ?" => [0, 0, 2, 2, 2, 1, 0, 0, 0],
+        "Êtes-vous doué pour la programmation informatique ?" => [0, 2, 0, 0, 1, 2, 0, 0, 0],
+        "Aimez-vous apprendre les langues étrangères et les cultures ?" => [0, 0, 0, 0, 0, 0, 0, 2, 2],
+        "Êtes-vous intéressé par les phénomènes sociaux et les sciences humaines ?" => [0, 0, 0, 0, 0, 0, 2, 2, 1],
+        "Êtes-vous créatif et intéressé par les arts ?" => [0, 0, 0, 0, 0, 1, 0, 0, 2],
+        "Avez-vous une curiosité pour l'histoire et la géographie ?" => [0, 0, 0, 0, 0, 0, 1, 1, 1],
+        "Aimez-vous les langues et les cultures étrangères ?" => [0, 0, 0, 0, 0, 0, 0, 2, 2],
+        "Êtes-vous intéressé par l'économie et la finance ?" => [0, 1, 0, 0, 2, 2, 2, 2, 1],
+        "Avez-vous une curiosité pour la biologie et la santé ?" => [0, 0, 2, 2, 0, 0, 0, 0, 0],
+        "Êtes-vous doué pour la compréhension de textes juridiques complexes ?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
+        "Aimez-vous les sciences politiques et les relations internationales ?" => [0, 0, 0, 2, 2, 0, 1, 1, 1],
+        "Êtes-vous intéressé par les sciences de l'environnement et le développement durable ?" => [2, 0, 1, 0, 0, 0, 0, 0, 0],
+        "Avez-vous une curiosité pour l'architecture et l'urbanisme ?" => [0, 0, 0, 0, 0, 0, 2, 2, 2]
     ];
 
-    #[Route('/get/type_bac', name: 'get.typeBac', methods: ['GET'])]
-    public function getTypeBac(): Response
+    #[Route('/get/qst', name: 'get.qst', methods: ['GET'])]
+    public function getQst(): Response
     {
 
         return $this->json(self::TYPE_BAC, Response::HTTP_OK, []);
     }
 
-    #[Route('/', name: 'app_index')]
-    public function index(): Response
+    public function TraitementReponses(array $reponses): array
     {
-        $reponses = [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0];
-        $score = [0, 0, 0, 0, 0, 0, 0];
-        $max = [0, 0, 0, 0, 0, 0, 0];
-        $perc = [0, 0, 0, 0, 0, 0, 0];
+        // $reponses = [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0];
+        $score = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        $max = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        $perc = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         $cpt = 0;
         foreach (self::QST_1 as $qst => $resp) {
             if ($reponses[$cpt] == 1) {
@@ -212,10 +103,37 @@ class IndexController extends AbstractController
 
         arsort($perc);
 
-        // Récupération des clés des trois plus grands nombres
-        $top_three_keys = array_slice(array_keys($perc, true), 0, 3);
+        $i = 0;
+        foreach ($perc as $key => $value) {
+            $resultat[] = ["filliere" => self::CATEGORIE_PAR_BAC["Sciences Physiques et Chimiques"][$key], "desc" => self::DESC_FILLIERES_SPC[$key], "perc" => intval(round($value, 2))];
 
-        dd($top_three_keys);
+            if ($i == 2) {
+                break;
+            }
+            $i++;
+        }
+
+        return $resultat;
+    }
+
+    #[Route('/api/results', name: 'api.results', methods: ['POST'])]
+    public function results(Request $request): Response
+    {
+        $data = json_decode($request->getContent(), true);
+        $reponses = [];
+
+        //Tableau de reponses;
+        foreach ($data as $el) {
+            $reponses[] = intval($el["choix"]);
+        }
+
+        $resultat = $this->TraitementReponses($reponses);
+        return $this->json($resultat, Response::HTTP_OK, []);
+    }
+
+    #[Route('/', name: 'app_index')]
+    public function index(): Response
+    {
         return $this->render('index/index.html.twig');
     }
 }

@@ -1,4 +1,5 @@
 <script>
+import axios from "axios";
 import Multiselect from "@vueform/multiselect";
 import "@vueform/multiselect/themes/default.css";
 export default {
@@ -36,18 +37,83 @@ export default {
             ressources: {
                 quizz: [
                     {
-                        question: "T beau ?",
+                        question: "Aimez-vous résoudre des problèmes mathématiques complexes ?",
                         choix: null
                     },
                     {
-                        question: "T mechant ?",
+                        question: "Êtes-vous intéressé par les mathématiques appliquées à l'économie et à la finance ?",
                         choix: null
                     },
                     {
-                        question: "T null ?",
+                        question: "Avez-vous une curiosité pour la physique et la chimie ?",
                         choix: null
                     },
-                ]
+                    {
+                        question: "Êtes-vous doué pour la programmation informatique ?",
+                        choix: null
+                    },
+                    {
+                        question: "Aimez-vous apprendre les langues étrangères et les cultures ?",
+                        choix: null
+                    },
+                    {
+                        question: "Êtes-vous intéressé par les phénomènes sociaux et les sciences humaines ?",
+                        choix: null
+                    },
+                    {
+                        question: "Êtes-vous créatif et intéressé par les arts ?",
+                        choix: null
+                    },
+                    {
+                        question: "Avez-vous une curiosité pour l'histoire et la géographie ?",
+                        choix: null
+                    },
+                    {
+                        question: "Aimez-vous les langues et les cultures étrangères ?",
+                        choix: null
+                    },
+                    {
+                        question: "Êtes-vous intéressé par l'économie et la finance ?",
+                        choix: null
+                    },
+                    {
+                        question: "Avez-vous une curiosité pour la biologie et la santé ?",
+                        choix: null
+                    },
+                    {
+                        question: "Êtes-vous doué pour la compréhension de textes juridiques complexes ?",
+                        choix: null
+                    },
+                    {
+                        question: "Aimez-vous les sciences politiques et les relations internationales ?",
+                        choix: null
+                    },
+                    {
+                        question: "Êtes-vous intéressé par les sciences de l'environnement et le développement durable ?",
+                        choix: null
+                    },
+                    {
+                        question: "Avez-vous une curiosité pour l'architecture et l'urbanisme ?",
+                        choix: null
+                    }
+                ],
+                resultat: {
+                    prem: {
+                        filliere: null,
+                        perc: null,
+                        desc: null
+                    },
+                    deux: {
+                        filliere: null,
+                        perc: null,
+                        desc: null
+                    },
+                    trois: {
+                        filliere: null,
+                        perc: null,
+                        desc: null
+                    }
+                }
             },
             settings: {
                 isStarted: false,
@@ -66,6 +132,42 @@ export default {
                 this.settings.done = true;
                 this.$emit('update-is-done', true);
                 console.log(this.ressources.quizz);
+
+                axios
+                    .post("/api/results", this.ressources.quizz)
+                    .then((res) => {
+                        console.log(res.data);
+                        var result = this.ressources.resultat;
+                        var cpt = 0;
+                        res.data.forEach(el => {
+                            console.log(el);
+                            switch (cpt) {
+                                case 0:
+                                    result.prem.perc = el.perc;
+                                    result.prem.filliere = el.filliere;
+                                    result.prem.desc = el.desc;
+                                    break;
+                                case 1:
+                                    result.deux.perc = el.perc;
+                                    result.deux.filliere = el.filliere;
+                                    result.deux.desc = el.desc;
+                                    break;
+                                case 2:
+                                    result.trois.perc = el.perc;
+                                    result.trois.filliere = el.filliere;
+                                    result.trois.desc = el.desc;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            cpt++;
+                        });
+
+                    })
+                    .catch((err) => {
+                    })
+                    .finally(() => {
+                    });
             }
 
             window.scrollTo(0, 0);
@@ -152,12 +254,12 @@ export default {
                                     </div>
                                 </div>
                                 <b-row>
-                                    <b-col lg="6">
+                                    <b-col lg="12">
                                         <b-form-group :id="'qst' + i" class="my-1" :label="el.question">
                                             <b-form-radio v-model="el.choix" :name="'quizz-radio' + i"
-                                                value="Oui">Oui</b-form-radio>
+                                                value="1">Oui</b-form-radio>
                                             <b-form-radio v-model="el.choix" :name="'quizz-radio' + i"
-                                                value="Non">Non</b-form-radio>
+                                                value="0">Non</b-form-radio>
                                         </b-form-group>
                                     </b-col>
                                 </b-row>
@@ -180,19 +282,17 @@ export default {
             <b-col xxl="4">
                 <b-card no-body class="border card-border-success">
                     <b-card-header>
-                        <span class="float-end text-success"><b>100%</b></span>
+                        <span class="float-end text-success"><b>{{ ressources.resultat.prem.perc }}%</b></span>
                         <h6 class="card-title mb-0">
-                            Quality Forcast
+                            {{ ressources.resultat.prem.filliere }}
                             <b-badge variant="success" class="align-middle fs-10">Excellent</b-badge>
                         </h6>
                     </b-card-header>
                     <b-card-body>
-                        <p class="card-text">They all have something to say beyond the words on the page. They
-                            can come across as casual or neutral, exotic or graphic. Cosby sweater eu banh mi,
-                            qui irure terry richardson ex squid.</p>
+                        <p class="card-text">{{ ressources.resultat.prem.desc }}</p>
                         <div class="text-end">
                             <b-link href="javascript:void(0);" class="link-success fw-medium">
-                                Read More
+                                En savoir plus
                                 <i class="ri-arrow-right-line align-middle"></i>
                             </b-link>
                         </div>
@@ -202,19 +302,17 @@ export default {
             <b-col xxl="4">
                 <b-card no-body class="border card-border-warning">
                     <b-card-header>
-                        <span class="float-end text-warning"><b>75%</b></span>
+                        <span class="float-end text-warning"><b>{{ ressources.resultat.deux.perc }}%</b></span>
                         <h6 class="card-title mb-0">
-                            Handle to Forcast
+                            {{ ressources.resultat.deux.filliere }}
                             <span class="badge bg-warning text-light align-middle fs-10">Medium</span>
                         </h6>
                     </b-card-header>
                     <b-card-body>
-                        <p class="card-text">Whether article spirits new her covered hastily sitting her. Money
-                            witty books nor son add build on the card Chicken age had evening believe but
-                            proceed pretend mrs.</p>
+                        <p class="card-text">{{ ressources.resultat.deux.desc }}</p>
                         <div class="text-end">
                             <b-link href="javascript:void(0);" class="link-warning fw-medium">
-                                Read More
+                                En savoir plus
                                 <i class="ri-arrow-right-line align-middle"></i>
                             </b-link>
                         </div>
@@ -224,19 +322,17 @@ export default {
             <b-col xxl="4">
                 <b-card no-body class="border card-border-danger">
                     <b-card-header>
-                        <span class="float-end text-danger"><b>40%</b></span>
+                        <span class="float-end text-danger"><b>{{ ressources.resultat.trois.perc }}%</b></span>
                         <h6 class="card-title mb-0">
-                            Handle to Forcast
+                            {{ ressources.resultat.trois.filliere }}
                             <b-badge variant="danger" class="align-middle fs-10">Poor</b-badge>
                         </h6>
                     </b-card-header>
                     <b-card-body>
-                        <p class="card-text">Whether article spirits new her covered hastily sitting her. Money
-                            witty books nor son add build on the card Chicken age had evening believe but
-                            proceed pretend mrs.</p>
+                        <p class="card-text">{{ ressources.resultat.trois.desc }}</p>
                         <div class="text-end">
                             <b-link href="javascript:void(0);" class="link-danger fw-medium">
-                                Read More
+                                En savoir plus
                                 <i class="ri-arrow-right-line align-middle"></i>
                             </b-link>
                         </div>
