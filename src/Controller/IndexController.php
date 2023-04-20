@@ -79,7 +79,7 @@ class IndexController extends AbstractController
         "Avez-vous une aptitude pour la résolution de problèmes pratiques et concrets?" => [1, 2, 1, 1, 1, 1, 0, 0, 0]
     ];
 
-    #[Route('/get/qst', name: 'get.qst', methods: ['GET'])]
+    #[Route('/get/qst', name: 'get.qst', methods: ["GET"])]
     public function getQst(): Response
     {
 
@@ -125,7 +125,7 @@ class IndexController extends AbstractController
         return $resultat;
     }
 
-    #[Route('/api/dataUser', name: 'api.dataUser', methods: ['POST'])]
+    #[Route('/api/dataUser', name: 'api.dataUser', methods: ["POST"])]
     public function dataUser(Request $request): Response
     {
         $data = json_decode($request->getContent(), true);
@@ -146,7 +146,7 @@ class IndexController extends AbstractController
         return $this->json($data, Response::HTTP_OK, []);
     }
 
-    #[Route('/api/sendMessage', name: 'api.sendMessage', methods: ['POST'])]
+    #[Route('/api/sendMessage', name: 'api.sendMessage', methods: ["POST"])]
     public function sendMessage(Request $request): Response
     {
         $data = json_decode($request->getContent(), true);

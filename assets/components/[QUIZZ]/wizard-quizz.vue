@@ -389,7 +389,7 @@ export default {
                     <label class="form-label" for="prenom-input">Votre avis nous intéresse !</label>
                     <b-form-textarea id="textarea" v-model="datas.message"
                         placeholder="Avez-vous des recommandations à faire, des modifications ou une fonctionnalité qui vous intéresse pou améliorer notre plateforme E-TAWJIHI ?"
-                        rows="10" max-rows="20"></b-form-textarea>
+                        rows="5"></b-form-textarea>
                 </div>
 
                 <div class="d-flex align-items-start gap-3 mt-4">

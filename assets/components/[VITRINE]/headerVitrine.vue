@@ -1,10 +1,8 @@
 <script>
-import { currentUser } from "../../state/helpers";
 export default {
   name: "HeaderVitrine",
   components: {},
   computed: {
-    ...currentUser,
     user: {
       get() {
         return this.$store ? this.$store.state.user.user : {} || {};
@@ -32,17 +30,17 @@ export default {
     <div class="container">
       <a class="navbar-brand" href="/#">
         <!-- <img
-            src="../../styles/images/logo-nobg.png"
-            class="card-logo card-logo-dark"
-            alt="logo dark"
-            height="35"
-          />
-          <img
-            src="../../styles/images/logo-nobg.png"
-            class="card-logo card-logo-light"
-            alt="logo light"
-            height="35"
-          /> -->
+                    src="../../styles/images/logo-nobg.png"
+                    class="card-logo card-logo-dark"
+                    alt="logo dark"
+                    height="35"
+                  />
+                  <img
+                    src="../../styles/images/logo-nobg.png"
+                    class="card-logo card-logo-light"
+                    alt="logo light"
+                    height="35"
+                  /> -->
       </a>
       <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -53,8 +51,8 @@ export default {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
           <!-- <li class="nav-item">
-              <a class="nav-link active" href="#search">Trouver un notaire</a>
-            </li> -->
+                      <a class="nav-link active" href="#search">Trouver un notaire</a>
+                    </li> -->
           <li class="nav-item">
             <a class="nav-link active2" href="#hero">Logiciel Notaire</a>
           </li>
