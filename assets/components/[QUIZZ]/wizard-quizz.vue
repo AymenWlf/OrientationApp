@@ -37,66 +37,87 @@ export default {
             ressources: {
                 quizz: [
                     {
-                        question: "Aimez-vous résoudre des problèmes mathématiques complexes ?",
+                        question: "Aimez-vous résoudre des problèmes complexes?",
                         choix: null
                     },
                     {
-                        question: "Êtes-vous intéressé par les mathématiques appliquées à l'économie et à la finance ?",
+                        question: "Êtes-vous créatif/ve?",
                         choix: null
                     },
                     {
-                        question: "Avez-vous une curiosité pour la physique et la chimie ?",
+                        question: "Aimez-vous travailler avec des ordinateurs et des technologies?",
                         choix: null
                     },
                     {
-                        question: "Êtes-vous doué pour la programmation informatique ?",
+                        question: "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?",
                         choix: null
                     },
                     {
-                        question: "Aimez-vous apprendre les langues étrangères et les cultures ?",
+                        question: "Êtes-vous curieux/se de savoir comment les choses fonctionnent?",
                         choix: null
                     },
                     {
-                        question: "Êtes-vous intéressé par les phénomènes sociaux et les sciences humaines ?",
+                        question: "Aimez-vous faire des expériences scientifiques?",
                         choix: null
                     },
                     {
-                        question: "Êtes-vous créatif et intéressé par les arts ?",
+                        question: "Êtes-vous intéressé/e par les mathématiques et les statistiques?",
                         choix: null
                     },
                     {
-                        question: "Avez-vous une curiosité pour l'histoire et la géographie ?",
+                        question: "Êtes-vous capable de penser de manière analytique?",
                         choix: null
                     },
                     {
-                        question: "Aimez-vous les langues et les cultures étrangères ?",
+                        question: "Avez-vous un bon sens de l'observation?",
                         choix: null
                     },
                     {
-                        question: "Êtes-vous intéressé par l'économie et la finance ?",
+                        question: "Avez-vous un fort désir d'apprendre de nouvelles choses?",
                         choix: null
                     },
                     {
-                        question: "Avez-vous une curiosité pour la biologie et la santé ?",
+                        question: "Êtes-vous capable de travailler en équipe?",
                         choix: null
                     },
                     {
-                        question: "Êtes-vous doué pour la compréhension de textes juridiques complexes ?",
+                        question: "Avez-vous une forte éthique de travail?",
                         choix: null
                     },
                     {
-                        question: "Aimez-vous les sciences politiques et les relations internationales ?",
+                        question: "Êtes-vous doué/e pour la communication?",
                         choix: null
                     },
                     {
-                        question: "Êtes-vous intéressé par les sciences de l'environnement et le développement durable ?",
+                        question: "Êtes-vous intéressé/e par les enjeux économiques et financiers?",
                         choix: null
                     },
                     {
-                        question: "Avez-vous une curiosité pour l'architecture et l'urbanisme ?",
+                        question: "Êtes-vous doué/e pour la résolution de problèmes logiques?",
+                        choix: null
+                    },
+                    {
+                        question: "Aimez-vous travailler avec des chiffres?",
+                        choix: null
+                    },
+                    {
+                        question: "Êtes-vous intéressé/e par les lois et la justice?",
+                        choix: null
+                    },
+                    {
+                        question: "Êtes-vous doué/e pour la négociation et la persuasion?",
+                        choix: null
+                    },
+                    {
+                        question: "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?",
+                        choix: null
+                    },
+                    {
+                        question: "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?",
                         choix: null
                     }
                 ],
+
                 resultat: {
                     prem: {
                         filliere: null,
@@ -306,7 +327,7 @@ export default {
                         <span class="float-end text-success"><b>{{ ressources.resultat.prem.perc }}%</b></span>
                         <h6 class="card-title mb-0">
                             {{ ressources.resultat.prem.filliere }}
-                            <b-badge variant="success" class="align-middle fs-10">Excellent</b-badge>
+                            <b-badge variant="success" class="align-middle fs-10">Premier choix</b-badge>
                         </h6>
                     </b-card-header>
                     <b-card-body>
@@ -326,7 +347,7 @@ export default {
                         <span class="float-end text-warning"><b>{{ ressources.resultat.deux.perc }}%</b></span>
                         <h6 class="card-title mb-0">
                             {{ ressources.resultat.deux.filliere }}
-                            <span class="badge bg-warning text-light align-middle fs-10">Medium</span>
+                            <span class="badge bg-warning text-light align-middle fs-10">Deuxième choix</span>
                         </h6>
                     </b-card-header>
                     <b-card-body>
@@ -346,7 +367,7 @@ export default {
                         <span class="float-end text-danger"><b>{{ ressources.resultat.trois.perc }}%</b></span>
                         <h6 class="card-title mb-0">
                             {{ ressources.resultat.trois.filliere }}
-                            <b-badge variant="danger" class="align-middle fs-10">Poor</b-badge>
+                            <b-badge variant="danger" class="align-middle fs-10">Troisième choix</b-badge>
                         </h6>
                     </b-card-header>
                     <b-card-body>
