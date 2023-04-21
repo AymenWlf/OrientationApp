@@ -56,28 +56,52 @@ class IndexController extends AbstractController
         "Sciences et Technologies Mécaniques"
     ];
 
+    // const QST_0 = [
+    //     "Aimez-vous résoudre des problèmes complexes?" => [2, 2, 0, 2, 1, 1, 0, 0, 0],
+    //     "Êtes-vous créatif/ve?" => [1, 1, 1, 1, 1, 1, 1, 2, 2],
+    //     "Aimez-vous travailler avec des ordinateurs et des technologies?" => [1, 1, 0, 0, 2, 2, 0, 0, 0],
+    //     "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?" => [0, 0, 2, 1, 1, 0, 0, 0, 0],
+    //     "Êtes-vous curieux/se de savoir comment les choses fonctionnent?" => [1, 1, 1, 1, 1, 1, 0, 0, 0],
+    //     "Aimez-vous faire des expériences scientifiques?" => [1, 1, 1, 2, 1, 0, 0, 0, 0],
+    //     "Êtes-vous intéressé/e par les mathématiques et les statistiques?" => [1, 1, 1, 1, 1, 2, 1, 0, 0],
+    //     "Êtes-vous capable de penser de manière analytique?" => [1, 1, 1, 1, 1, 2, 1, 0, 0],
+    //     "Avez-vous un bon sens de l'observation?" => [1, 1, 1, 1, 1, 1, 0, 0, 0],
+    //     "Avez-vous un fort désir d'apprendre de nouvelles choses?" => [1, 1, 1, 1, 1, 1, 1, 1, 0],
+    //     "Êtes-vous capable de travailler en équipe?" => [1, 1, 1, 1, 1, 1, 1, 2, 1],
+    //     "Avez-vous une forte éthique de travail?" => [1, 1, 1, 1, 1, 1, 1, 2, 2],
+    //     "Êtes-vous doué/e pour la communication?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
+    //     "Êtes-vous intéressé/e par les enjeux économiques et financiers?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
+    //     "Êtes-vous doué/e pour la résolution de problèmes logiques?" => [1, 1, 1, 1, 1, 2, 0, 0, 0],
+    //     "Aimez-vous travailler avec des chiffres?" => [1, 1, 1, 1, 1, 2, 0, 0, 0],
+    //     "Êtes-vous intéressé/e par les lois et la justice?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
+    //     "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
+    //     "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?" => [0, 1, 1, 1, 0, 0, 1, 1, 1],
+    //     "Avez-vous une aptitude pour la résolution de problèmes pratiques et concrets?" => [1, 2, 1, 1, 1, 1, 0, 0, 0]
+    // ];
+
     const QST_1 = [
-        "Aimez-vous résoudre des problèmes complexes?" => [2, 2, 0, 2, 1, 1, 0, 0, 0],
-        "Êtes-vous créatif/ve?" => [1, 1, 1, 1, 1, 1, 1, 2, 2],
-        "Aimez-vous travailler avec des ordinateurs et des technologies?" => [1, 1, 0, 0, 2, 2, 0, 0, 0],
-        "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?" => [0, 0, 2, 1, 1, 0, 0, 0, 0],
-        "Êtes-vous curieux/se de savoir comment les choses fonctionnent?" => [1, 1, 1, 1, 1, 1, 0, 0, 0],
-        "Aimez-vous faire des expériences scientifiques?" => [1, 1, 1, 2, 1, 0, 0, 0, 0],
-        "Êtes-vous intéressé/e par les mathématiques et les statistiques?" => [1, 1, 1, 1, 1, 2, 1, 0, 0],
-        "Êtes-vous capable de penser de manière analytique?" => [1, 1, 1, 1, 1, 2, 1, 0, 0],
-        "Avez-vous un bon sens de l'observation?" => [1, 1, 1, 1, 1, 1, 0, 0, 0],
-        "Avez-vous un fort désir d'apprendre de nouvelles choses?" => [1, 1, 1, 1, 1, 1, 1, 1, 0],
-        "Êtes-vous capable de travailler en équipe?" => [1, 1, 1, 1, 1, 1, 1, 2, 1],
-        "Avez-vous une forte éthique de travail?" => [1, 1, 1, 1, 1, 1, 1, 2, 2],
-        "Êtes-vous doué/e pour la communication?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
-        "Êtes-vous intéressé/e par les enjeux économiques et financiers?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
-        "Êtes-vous doué/e pour la résolution de problèmes logiques?" => [1, 1, 1, 1, 1, 2, 0, 0, 0],
-        "Aimez-vous travailler avec des chiffres?" => [1, 1, 1, 1, 1, 2, 0, 0, 0],
-        "Êtes-vous intéressé/e par les lois et la justice?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
-        "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
-        "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?" => [0, 1, 1, 1, 0, 0, 1, 1, 1],
-        "Avez-vous une aptitude pour la résolution de problèmes pratiques et concrets?" => [1, 2, 1, 1, 1, 1, 0, 0, 0]
+        "Aimez-vous résoudre des problèmes complexes?" => [5, 4, 2, 3, 3, 4, 1, 1, 0],
+        "Êtes-vous créatif/ve?" => [3, 3, 3, 3, 4, 4, 3, 4, 4],
+        "Aimez-vous travailler avec des ordinateurs et des technologies?" => [3, 3, 1, 1, 5, 5, 1, 1, 0],
+        "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?" => [1, 1, 5, 4, 3, 1, 0, 0, 0],
+        "Êtes-vous curieux/se de savoir comment les choses fonctionnent?" => [4, 4, 4, 4, 4, 4, 2, 1, 1],
+        "Aimez-vous faire des expériences scientifiques?" => [3, 3, 4, 5, 3, 1, 1, 1, 0],
+        "Êtes-vous intéressé/e par les mathématiques et les statistiques?" => [4, 4, 4, 4, 4, 5, 4, 1, 0],
+        "Êtes-vous capable de penser de manière analytique?" => [4, 4, 4, 4, 4, 5, 4, 2, 1],
+        "Avez-vous un bon sens de l'observation?" => [3, 3, 3, 3, 3, 3, 1, 1, 1],
+        "Avez-vous un fort désir d'apprendre de nouvelles choses?" => [4, 4, 4, 4, 4, 4, 4, 4, 3],
+        "Êtes-vous capable de travailler en équipe?" => [3, 3, 3, 3, 3, 3, 3, 5, 4],
+        "Avez-vous une forte éthique de travail?" => [3, 3, 3, 3, 3, 3, 3, 4, 4],
+        "Êtes-vous doué/e pour la communication?" => [2, 2, 2, 2, 2, 2, 4, 4, 4],
+        "Êtes-vous intéressé/e par les enjeux économiques et financiers?" => [1, 1, 1, 1, 1, 1, 4, 4, 4],
+        "Êtes-vous doué/e pour la résolution de problèmes logiques?" => [4, 4, 4, 4, 4, 5, 2, 2, 2],
+        "Aimez-vous travailler avec des chiffres?" => [4, 4, 4, 4, 4, 5, 2, 2, 2],
+        "Êtes-vous intéressé/e par les lois et la justice?" => [1, 1, 1, 1, 1, 1, 4, 4, 5],
+        "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?" => [2, 2, 2, 2, 2, 2, 4, 4, 4],
+        "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?" => [2, 3, 3, 3, 2, 2, 3, 3, 3],
+        "Avez-vous une aptitude pour la résolution de problèmes pratiques et concrets?" => [3, 4, 3, 3, 3, 3, 1, 1, 1]
     ];
+
 
     #[Route('/get/qst', name: 'get.qst', methods: ["GET"])]
     public function getQst(): Response
