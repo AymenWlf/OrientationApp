@@ -333,7 +333,7 @@ export default {
                     <b-card-body>
                         <p class="card-text">{{ ressources.resultat.prem.desc }}</p>
                         <div class="text-end">
-                            <b-link href="javascript:void(0);" class="link-success fw-medium">
+                            <b-link href="https://www.instagram.com/e_tawjihi_ma/" class="link-success fw-medium">
                                 En savoir plus
                                 <i class="ri-arrow-right-line align-middle"></i>
                             </b-link>
@@ -353,7 +353,7 @@ export default {
                     <b-card-body>
                         <p class="card-text">{{ ressources.resultat.deux.desc }}</p>
                         <div class="text-end">
-                            <b-link href="javascript:void(0);" class="link-warning fw-medium">
+                            <b-link href="https://www.instagram.com/e_tawjihi_ma/" class="link-warning fw-medium">
                                 En savoir plus
                                 <i class="ri-arrow-right-line align-middle"></i>
                             </b-link>
@@ -373,7 +373,7 @@ export default {
                     <b-card-body>
                         <p class="card-text">{{ ressources.resultat.trois.desc }}</p>
                         <div class="text-end">
-                            <b-link href="javascript:void(0);" class="link-danger fw-medium">
+                            <b-link href="https://www.instagram.com/e_tawjihi_ma/" class="link-danger fw-medium">
                                 En savoir plus
                                 <i class="ri-arrow-right-line align-middle"></i>
                             </b-link>
