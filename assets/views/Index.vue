@@ -53,7 +53,8 @@ export default {
           <!-- end col -->
           <div class="col-sm-auto">
             <div>
-              <a href="https://www.instagram.com/e_tawjihi_ma/" class="btn bg-gradient btn-danger">Envoyer mon
+              <a target="_blank" href="https://www.instagram.com/e_tawjihi_ma/" class="btn bg-gradient btn-danger">Envoyer
+                mon
                 feedback</a>
             </div>
           </div>
