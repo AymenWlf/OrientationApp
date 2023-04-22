@@ -2,15 +2,18 @@
 
 namespace App\Entity;
 
-use App\Repository\UtilisateurRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
+use App\Traits\TimeStampTraits;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\UtilisateurRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: UtilisateurRepository::class)]
+#[ORM\HasLifecycleCallbacks()]
 class Utilisateur
 {
+    use TimeStampTraits;
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

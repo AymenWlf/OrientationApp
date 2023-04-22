@@ -2,13 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\ResultatRepository;
 use Doctrine\DBAL\Types\Types;
+use App\Traits\TimeStampTraits;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ResultatRepository;
 
 #[ORM\Entity(repositoryClass: ResultatRepository::class)]
+#[ORM\HasLifecycleCallbacks()]
 class Resultat
 {
+    use TimeStampTraits;
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

@@ -2,13 +2,17 @@
 
 namespace App\Entity;
 
-use App\Repository\MessageRepository;
 use Doctrine\DBAL\Types\Types;
+use App\Traits\TimeStampTraits;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\MessageRepository;
 
 #[ORM\Entity(repositoryClass: MessageRepository::class)]
+#[ORM\HasLifecycleCallbacks()]
 class Message
 {
+    use TimeStampTraits;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
