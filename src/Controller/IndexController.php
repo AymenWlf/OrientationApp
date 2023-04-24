@@ -93,26 +93,26 @@ class IndexController extends AbstractController
     ];
 
     const QST_SM_A_B = [
-        "Aimez-vous résoudre dsssssses problèmes complexes?" => [5, 4, 2, 3, 3, 4, 1, 1, 0],
-        "Êtes-vous créatif/ve?" => [3, 3, 3, 3, 4, 4, 3, 4, 4],
-        "Aimez-vous travailler avec des ordinateurs et des technologies?" => [3, 3, 1, 1, 5, 5, 1, 1, 0],
-        "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?" => [1, 1, 5, 4, 3, 1, 0, 0, 0],
-        "Êtes-vous curieux/se de savoir comment les choses fonctionnent?" => [4, 4, 4, 4, 4, 4, 2, 1, 1],
-        "Aimez-vous faire des expériences scientifiques?" => [3, 3, 4, 5, 3, 1, 1, 1, 0],
-        "Êtes-vous intéressé/e par les mathématiques et les statistiques?" => [4, 4, 4, 4, 4, 5, 4, 1, 0],
-        "Êtes-vous capable de penser de manière analytique?" => [4, 4, 4, 4, 4, 5, 4, 2, 1],
-        "Avez-vous un bon sens de l'observation?" => [3, 3, 3, 3, 3, 3, 1, 1, 1],
-        "Avez-vous un fort désir d'apprendre de nouvelles choses?" => [4, 4, 4, 4, 4, 4, 4, 4, 3],
-        "Êtes-vous capable de travailler en équipe?" => [3, 3, 3, 3, 3, 3, 3, 5, 4],
-        "Avez-vous une forte éthique de travail?" => [3, 3, 3, 3, 3, 3, 3, 4, 4],
-        "Êtes-vous doué/e pour la communication?" => [2, 2, 2, 2, 2, 2, 4, 4, 4],
-        "Êtes-vous intéressé/e par les enjeux économiques et financiers?" => [1, 1, 1, 1, 1, 1, 4, 4, 4],
-        "Êtes-vous doué/e pour la résolution de problèmes logiques?" => [4, 4, 4, 4, 4, 5, 2, 2, 2],
-        "Aimez-vous travailler avec des chiffres?" => [4, 4, 4, 4, 4, 5, 2, 2, 2],
-        "Êtes-vous intéressé/e par les lois et la justice?" => [1, 1, 1, 1, 1, 1, 4, 4, 5],
-        "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?" => [2, 2, 2, 2, 2, 2, 4, 4, 4],
-        "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?" => [2, 3, 3, 3, 2, 2, 3, 3, 3],
-        "Avez-vous une aptitude pour la résolution de problèmes pratiques et concrets?" => [3, 4, 3, 3, 3, 3, 1, 1, 1]
+        "Les mathématiques et la résolution de problèmes complexes vous passionnent-elles?" => [5, 5, 5, 5, 3, 3, 3],
+        "Trouvez-vous les domaines des sciences et technologies stimulants et captivants?" => [5, 5, 5, 5, 3, 3, 2],
+        "L'idée de concevoir, construire et analyser des systèmes techniques en tant qu'ingénieur vous attire-t-elle?" => [4, 5, 4, 4, 2, 2, 1],
+        "Êtes-vous curieux d'apprendre la programmation informatique et de développer des solutions technologiques?" => [4, 4, 5, 3, 3, 3, 2],
+        "La physique et la compréhension des lois qui gouvernent notre univers vous intéressent-elles?" => [4, 4, 3, 5, 2, 2, 1],
+        "L'étude de l'économie, des marchés et des politiques économiques vous semble-t-elle passionnante?" => [2, 2, 2, 2, 5, 4, 3],
+        "Aimeriez-vous apprendre la gestion d'entreprise, les ressources humaines et les stratégies de leadership?" => [2, 2, 2, 1, 4, 5, 3],
+        "Le droit, la régulation et la résolution de conflits juridiques vous captivent-ils?" => [1, 1, 1, 1, 3, 3, 5],
+        "Appréciez-vous travailler en équipe sur des projets scientifiques, technologiques ou techniques?" => [5, 5, 5, 5, 3, 3, 3],
+        "Aimeriez-vous résoudre des problèmes réels en utilisant les mathématiques et les modèles mathématiques?" => [5, 5, 5, 5, 3, 3, 2],
+        "Êtes-vous intéressé par l'analyse et la visualisation de données pour en tirer des conclusions pertinentes?" => [4, 4, 5, 4, 5, 4, 3],
+        "Aimez-vous comprendre et appliquer les dernières avancées technologiques?" => [5, 5, 5, 4, 3, 3, 2],
+        "Souhaitez-vous travailler sur des défis concrets liés à l'énergie, l'environnement ou les transports?" => [4, 5, 4, 4, 3, 3, 2],
+        "Êtes-vous passionné par l'application des mathématiques dans divers domaines, tels que la biologie ou la chimie?" => [5, 4, 4, 5, 3, 2, 1],
+        "Souhaitez-vous comprendre le fonctionnement des marchés financiers et le rôle de la politique économique?" => [2, 2, 2, 2, 5, 4, 3],
+        "Êtes-vous intéressé par l'organisation et la gestion de projets pour atteindre des objectifs spécifiques?" => [3, 3, 3, 2, 4, 5, 4],
+        "Les questions juridiques, la régulation et la législation vous passionnent-elles?" => [1, 1, 1, 1, 3, 3, 5],
+        "Êtes-vous prêt à relever des défis et à apprendre continuellement dans le domaine que vous choisirez?" => [5, 5, 5, 5, 5, 5, 5],
+        "Souhaitez-vous contribuer à la recherche et au développement dans votre domaine d'études futur?" => [4, 4, 4, 4, 4, 4, 4],
+        "Êtes-vous intéressé par l'étude des algorithmes, des structures de données et de la complexité computationnelle pour résoudre des problèmes informatiques?" => [4, 4, 5, 3, 2, 2, 1]
     ];
 
     #[Route('/get/qst', name: 'get.qst', methods: ["GET"])]

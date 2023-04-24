@@ -120,86 +120,86 @@ export default {
                     ],
                     sm_a_b: [
                         {
-                            question: "Aimez-vous ddddddddddrésoudre des problèmes complexes?",
+                            question: "Les mathématiques et la résolution de problèmes complexes vous passionnent-elles?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous créatif/ve?",
+                            question: "Trouvez-vous les domaines des sciences et technologies stimulants et captivants?",
                             choix: null
                         },
                         {
-                            question: "Aimez-vous travailler avec des ordinateurs et des technologies?",
+                            question: "L'idée de concevoir, construire et analyser des systèmes techniques en tant qu'ingénieur vous attire-t-elle?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?",
+                            question: "Êtes-vous curieux d'apprendre la programmation informatique et de développer des solutions technologiques?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous curieux/se de savoir comment les choses fonctionnent?",
+                            question: "La physique et la compréhension des lois qui gouvernent notre univers vous intéressent-elles?",
                             choix: null
                         },
                         {
-                            question: "Aimez-vous faire des expériences scientifiques?",
+                            question: "L'étude de l'économie, des marchés et des politiques économiques vous semble-t-elle passionnante?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé/e par les mathématiques et les statistiques?",
+                            question: "Aimeriez-vous apprendre la gestion d'entreprise, les ressources humaines et les stratégies de leadership?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous capable de penser de manière analytique?",
+                            question: "Le droit, la régulation et la résolution de conflits juridiques vous captivent-ils?",
                             choix: null
                         },
                         {
-                            question: "Avez-vous un bon sens de l'observation?",
+                            question: "Appréciez-vous travailler en équipe sur des projets scientifiques, technologiques ou techniques?",
                             choix: null
                         },
                         {
-                            question: "Avez-vous un fort désir d'apprendre de nouvelles choses?",
+                            question: "Aimeriez-vous résoudre des problèmes réels en utilisant les mathématiques et les modèles mathématiques?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous capable de travailler en équipe?",
+                            question: "Êtes-vous intéressé par l'analyse et la visualisation de données pour en tirer des conclusions pertinentes?",
                             choix: null
                         },
                         {
-                            question: "Avez-vous une forte éthique de travail?",
+                            question: "Aimez-vous comprendre et appliquer les dernières avancées technologiques?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous doué/e pour la communication?",
+                            question: "Souhaitez-vous travailler sur des défis concrets liés à l'énergie, l'environnement ou les transports?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé/e par les enjeux économiques et financiers?",
+                            question: "Êtes-vous passionné par l'application des mathématiques dans divers domaines, tels que la biologie ou la chimie?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous doué/e pour la résolution de problèmes logiques?",
+                            question: "Souhaitez-vous comprendre le fonctionnement des marchés financiers et le rôle de la politique économique?",
                             choix: null
                         },
                         {
-                            question: "Aimez-vous travailler avec des chiffres?",
+                            question: "Êtes-vous intéressé par l'organisation et la gestion de projets pour atteindre des objectifs spécifiques?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé/e par les lois et la justice?",
+                            question: "Les questions juridiques, la régulation et la législation vous passionnent-elles?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous doué/e pour la négociation et la persuasion?",
+                            question: "Êtes-vous prêt à relever des défis et à apprendre continuellement dans le domaine que vous choisirez?",
                             choix: null
                         },
                         {
-                            question: "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?",
+                            question: "Souhaitez-vous contribuer à la recherche et au développement dans votre domaine d'études futur?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?",
+                            question: "Êtes-vous intéressé par l'étude des algorithmes, des structures de données et de la complexité computationnelle pour résoudre des problèmes informatiques?",
                             choix: null
                         }
-                    ],
+                    ]
                 },
                 resultat: {
                     prem: {
