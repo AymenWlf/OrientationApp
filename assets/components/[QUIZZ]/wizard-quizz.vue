@@ -200,6 +200,16 @@ export default {
             window.scrollTo(0, 0);
         },
         sendMessage() {
+            if (this.datas.message == null) {
+                this.$notify({
+                    title: "Message invalid !",
+                    text:
+                        "Merci de remplir le champs feedback !",
+                    type: "warn",
+                    duration: 10000,
+                });
+                return;
+            }
             axios
                 .post("/api/sendMessage", this.datas)
                 .then((res) => {
