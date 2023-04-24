@@ -40,6 +40,9 @@ class Utilisateur
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Message::class)]
     private Collection $messages;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $type_bac = null;
+
     public function __construct()
     {
         $this->resultats = new ArrayCollection();
@@ -167,6 +170,18 @@ class Utilisateur
                 $message->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTypeBac(): ?string
+    {
+        return $this->type_bac;
+    }
+
+    public function setTypeBac(?string $type_bac): self
+    {
+        $this->type_bac = $type_bac;
 
         return $this;
     }

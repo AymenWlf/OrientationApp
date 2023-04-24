@@ -32,15 +32,28 @@ class IndexController extends AbstractController
     ];
 
     const DESC_FILLIERES_SPC = [
-        "Cette filière regroupe l'ensemble des disciplines scientifiques et technologiques qui permettent de comprendre le fonctionnement de notre univers et de développer de nouvelles technologies.",
-        "Cette filière forme des ingénieurs capables de concevoir, de réaliser et de gérer des projets techniques et scientifiques.",
-        "La filière de physique permet d'étudier les lois de l'univers et d'acquérir les connaissances nécessaires pour comprendre et résoudre des problèmes complexes.",
-        "La filière de chimie permet de comprendre la structure et les propriétés des atomes et des molécules, ainsi que les réactions chimiques qui se produisent entre eux.",
-        "La filière d'électronique permet de comprendre les principes de fonctionnement des systèmes électroniques et de développer de nouveaux dispositifs et technologies.",
-        "La filière d'informatique forme des professionnels capables de concevoir, de développer et de gérer des systèmes informatiques complexes.",
-        "La filière d'économie permet de comprendre le fonctionnement de l'économie mondiale et de développer des compétences en gestion et en analyse économique.",
-        "La filière de gestion forme des professionnels capables de gérer efficacement les entreprises et les organisations dans un contexte économique complexe.",
-        "La filière de droit permet d'acquérir les connaissances nécessaires pour comprendre les lois et les réglementations qui régissent notre société et de développer des compétences en analyse juridique."
+        "Sciences Physiques et Chimiques" => [
+            "Cette filière regroupe l'ensemble des disciplines scientifiques et technologiques qui permettent de comprendre le fonctionnement de notre univers et de développer de nouvelles technologies.",
+            "Cette filière forme des ingénieurs capables de concevoir, de réaliser et de gérer des projets techniques et scientifiques.",
+            "La filière de physique permet d'étudier les lois de l'univers et d'acquérir les connaissances nécessaires pour comprendre et résoudre des problèmes complexes.",
+            "La filière de chimie permet de comprendre la structure et les propriétés des atomes et des molécules, ainsi que les réactions chimiques qui se produisent entre eux.",
+            "La filière d'électronique permet de comprendre les principes de fonctionnement des systèmes électroniques et de développer de nouveaux dispositifs et technologies.",
+            "La filière d'informatique forme des professionnels capables de concevoir, de développer et de gérer des systèmes informatiques complexes.",
+            "La filière d'économie permet de comprendre le fonctionnement de l'économie mondiale et de développer des compétences en gestion et en analyse économique.",
+            "La filière de gestion forme des professionnels capables de gérer efficacement les entreprises et les organisations dans un contexte économique complexe.",
+            "La filière de droit permet d'acquérir les connaissances nécessaires pour comprendre les lois et les réglementations qui régissent notre société et de développer des compétences en analyse juridique."
+        ],
+        "Sciences Mathématiques A et B" => [
+            "Cette filière regroupe l'ensemble des dssssssisciplines scientifiques et technologiques qui permettent de comprendre le fonctionnement de notre univers et de développer de nouvelles technologies.",
+            "Cette filière forme des ingénieurs capables de concevoir, de réaliser et de gérer des projets techniques et scientifiques.",
+            "La filière de physique permet d'étudier les lois de l'univers et d'acquérir les connaissances nécessaires pour comprendre et résoudre des problèmes complexes.",
+            "La filière de chimie permet de comprendre la structure et les propriétés des atomes et des molécules, ainsi que les réactions chimiques qui se produisent entre eux.",
+            "La filière d'électronique permet de comprendre les principes de fonctionnement des systèmes électroniques et de développer de nouveaux dispositifs et technologies.",
+            "La filière d'informatique forme des professionnels capables de concevoir, de développer et de gérer des systèmes informatiques complexes.",
+            "La filière d'économie permet de comprendre le fonctionnement de l'économie mondiale et de développer des compétences en gestion et en analyse économique.",
+            "La filière de gestion forme des professionnels capables de gérer efficacement les entreprises et les organisations dans un contexte économique complexe.",
+            "La filière de droit permet d'acquérir les connaissances nécessaires pour comprendre les lois et les réglementations qui régissent notre société et de développer des compétences en analyse juridique."
+        ],
     ];
 
     const TYPE_BAC = [
@@ -56,30 +69,7 @@ class IndexController extends AbstractController
         "Sciences et Technologies Mécaniques"
     ];
 
-    // const QST_0 = [
-    //     "Aimez-vous résoudre des problèmes complexes?" => [2, 2, 0, 2, 1, 1, 0, 0, 0],
-    //     "Êtes-vous créatif/ve?" => [1, 1, 1, 1, 1, 1, 1, 2, 2],
-    //     "Aimez-vous travailler avec des ordinateurs et des technologies?" => [1, 1, 0, 0, 2, 2, 0, 0, 0],
-    //     "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?" => [0, 0, 2, 1, 1, 0, 0, 0, 0],
-    //     "Êtes-vous curieux/se de savoir comment les choses fonctionnent?" => [1, 1, 1, 1, 1, 1, 0, 0, 0],
-    //     "Aimez-vous faire des expériences scientifiques?" => [1, 1, 1, 2, 1, 0, 0, 0, 0],
-    //     "Êtes-vous intéressé/e par les mathématiques et les statistiques?" => [1, 1, 1, 1, 1, 2, 1, 0, 0],
-    //     "Êtes-vous capable de penser de manière analytique?" => [1, 1, 1, 1, 1, 2, 1, 0, 0],
-    //     "Avez-vous un bon sens de l'observation?" => [1, 1, 1, 1, 1, 1, 0, 0, 0],
-    //     "Avez-vous un fort désir d'apprendre de nouvelles choses?" => [1, 1, 1, 1, 1, 1, 1, 1, 0],
-    //     "Êtes-vous capable de travailler en équipe?" => [1, 1, 1, 1, 1, 1, 1, 2, 1],
-    //     "Avez-vous une forte éthique de travail?" => [1, 1, 1, 1, 1, 1, 1, 2, 2],
-    //     "Êtes-vous doué/e pour la communication?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
-    //     "Êtes-vous intéressé/e par les enjeux économiques et financiers?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
-    //     "Êtes-vous doué/e pour la résolution de problèmes logiques?" => [1, 1, 1, 1, 1, 2, 0, 0, 0],
-    //     "Aimez-vous travailler avec des chiffres?" => [1, 1, 1, 1, 1, 2, 0, 0, 0],
-    //     "Êtes-vous intéressé/e par les lois et la justice?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
-    //     "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?" => [0, 0, 0, 0, 0, 0, 2, 2, 2],
-    //     "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?" => [0, 1, 1, 1, 0, 0, 1, 1, 1],
-    //     "Avez-vous une aptitude pour la résolution de problèmes pratiques et concrets?" => [1, 2, 1, 1, 1, 1, 0, 0, 0]
-    // ];
-
-    const QST_1 = [
+    const QST_PC = [
         "Aimez-vous résoudre des problèmes complexes?" => [5, 4, 2, 3, 3, 4, 1, 1, 0],
         "Êtes-vous créatif/ve?" => [3, 3, 3, 3, 4, 4, 3, 4, 4],
         "Aimez-vous travailler avec des ordinateurs et des technologies?" => [3, 3, 1, 1, 5, 5, 1, 1, 0],
@@ -102,6 +92,28 @@ class IndexController extends AbstractController
         "Avez-vous une aptitude pour la résolution de problèmes pratiques et concrets?" => [3, 4, 3, 3, 3, 3, 1, 1, 1]
     ];
 
+    const QST_SM_A_B = [
+        "Aimez-vous résoudre dsssssses problèmes complexes?" => [5, 4, 2, 3, 3, 4, 1, 1, 0],
+        "Êtes-vous créatif/ve?" => [3, 3, 3, 3, 4, 4, 3, 4, 4],
+        "Aimez-vous travailler avec des ordinateurs et des technologies?" => [3, 3, 1, 1, 5, 5, 1, 1, 0],
+        "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?" => [1, 1, 5, 4, 3, 1, 0, 0, 0],
+        "Êtes-vous curieux/se de savoir comment les choses fonctionnent?" => [4, 4, 4, 4, 4, 4, 2, 1, 1],
+        "Aimez-vous faire des expériences scientifiques?" => [3, 3, 4, 5, 3, 1, 1, 1, 0],
+        "Êtes-vous intéressé/e par les mathématiques et les statistiques?" => [4, 4, 4, 4, 4, 5, 4, 1, 0],
+        "Êtes-vous capable de penser de manière analytique?" => [4, 4, 4, 4, 4, 5, 4, 2, 1],
+        "Avez-vous un bon sens de l'observation?" => [3, 3, 3, 3, 3, 3, 1, 1, 1],
+        "Avez-vous un fort désir d'apprendre de nouvelles choses?" => [4, 4, 4, 4, 4, 4, 4, 4, 3],
+        "Êtes-vous capable de travailler en équipe?" => [3, 3, 3, 3, 3, 3, 3, 5, 4],
+        "Avez-vous une forte éthique de travail?" => [3, 3, 3, 3, 3, 3, 3, 4, 4],
+        "Êtes-vous doué/e pour la communication?" => [2, 2, 2, 2, 2, 2, 4, 4, 4],
+        "Êtes-vous intéressé/e par les enjeux économiques et financiers?" => [1, 1, 1, 1, 1, 1, 4, 4, 4],
+        "Êtes-vous doué/e pour la résolution de problèmes logiques?" => [4, 4, 4, 4, 4, 5, 2, 2, 2],
+        "Aimez-vous travailler avec des chiffres?" => [4, 4, 4, 4, 4, 5, 2, 2, 2],
+        "Êtes-vous intéressé/e par les lois et la justice?" => [1, 1, 1, 1, 1, 1, 4, 4, 5],
+        "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?" => [2, 2, 2, 2, 2, 2, 4, 4, 4],
+        "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?" => [2, 3, 3, 3, 2, 2, 3, 3, 3],
+        "Avez-vous une aptitude pour la résolution de problèmes pratiques et concrets?" => [3, 4, 3, 3, 3, 3, 1, 1, 1]
+    ];
 
     #[Route('/get/qst', name: 'get.qst', methods: ["GET"])]
     public function getQst(): Response
@@ -110,14 +122,36 @@ class IndexController extends AbstractController
         return $this->json(self::TYPE_BAC, Response::HTTP_OK, []);
     }
 
-    public function TraitementReponses(array $reponses): array
+    public function TraitementReponses(array $reponses, string $type_bac): array
     {
         // $reponses = [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0];
-        $score = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-        $max = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-        $perc = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         $cpt = 0;
-        foreach (self::QST_1 as $qst => $resp) {
+
+        $arrayQst = [];
+        $emptyArr = null;
+
+        switch ($type_bac) {
+            case "Sciences Physiques et Chimiques":
+                $arrayQst = self::QST_PC;
+                break;
+            case "Sciences Mathématiques A et B":
+                $arrayQst = self::QST_SM_A_B;
+                break;
+
+            default:
+                # code...
+                break;
+        }
+
+        //Init TypeBacArr
+        $emptyArr = array_fill(0, count(self::CATEGORIE_PAR_BAC[$type_bac]), 0);
+
+        //Init Arr
+        $score = $emptyArr;
+        $max = $emptyArr;
+        $perc = $emptyArr;
+
+        foreach ($arrayQst as $qst => $resp) {
             if ($reponses[$cpt] == 1) {
                 for ($i = 0; $i < count($score); $i++) {
                     $score[$i] += $resp[$i];
@@ -138,7 +172,7 @@ class IndexController extends AbstractController
 
         $i = 0;
         foreach ($perc as $key => $value) {
-            $resultat[] = ["filliere" => self::CATEGORIE_PAR_BAC["Sciences Physiques et Chimiques"][$key], "desc" => self::DESC_FILLIERES_SPC[$key], "perc" => intval(round($value, 2))];
+            $resultat[] = ["filliere" => self::CATEGORIE_PAR_BAC[$type_bac][$key], "desc" => self::DESC_FILLIERES_SPC[$type_bac][$key], "perc" => intval(round($value, 2))];
 
             if ($i == 2) {
                 break;
@@ -159,10 +193,11 @@ class IndexController extends AbstractController
             $utilisateur = new Utilisateur();
         }
 
-        $utilisateur->setNom($data["nom"]);
-        $utilisateur->setPrenom($data["prenom"]);
-        $utilisateur->setTel($data["tel"]);
-        $utilisateur->setEmail($data["email"]);
+        $utilisateur->setNom($data["nom"])
+            ->setPrenom($data["prenom"])
+            ->setTel($data["tel"])
+            ->setEmail($data["email"])
+            ->setTypeBac($data["type_bac"]);
 
         $this->em->persist($utilisateur);
         $this->em->flush();
@@ -200,8 +235,8 @@ class IndexController extends AbstractController
         foreach ($data['quizz'] as $el) {
             $reponses[] = intval($el["choix"]);
         }
+        $resultat = $this->TraitementReponses($reponses, $data['datas']['type_bac']);
 
-        $resultat = $this->TraitementReponses($reponses);
         $results = new Resultat();
         $cpt = 0;
 
@@ -231,7 +266,7 @@ class IndexController extends AbstractController
             $cpt++;
         }
 
-        $results->setUtilisateur($this->utilsRepo->findOneBy(['email' => $data['email']]));
+        $results->setUtilisateur($this->utilsRepo->findOneBy(['email' => $data['datas']['email']]));
 
         $this->em->persist($results);
         $this->em->flush();

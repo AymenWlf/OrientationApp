@@ -35,89 +35,172 @@ export default {
                 message: null
             },
             ressources: {
-                quizz: [
-                    {
-                        question: "Aimez-vous résoudre des problèmes complexes?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous créatif/ve?",
-                        choix: null
-                    },
-                    {
-                        question: "Aimez-vous travailler avec des ordinateurs et des technologies?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous curieux/se de savoir comment les choses fonctionnent?",
-                        choix: null
-                    },
-                    {
-                        question: "Aimez-vous faire des expériences scientifiques?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous intéressé/e par les mathématiques et les statistiques?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous capable de penser de manière analytique?",
-                        choix: null
-                    },
-                    {
-                        question: "Avez-vous un bon sens de l'observation?",
-                        choix: null
-                    },
-                    {
-                        question: "Avez-vous un fort désir d'apprendre de nouvelles choses?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous capable de travailler en équipe?",
-                        choix: null
-                    },
-                    {
-                        question: "Avez-vous une forte éthique de travail?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous doué/e pour la communication?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous intéressé/e par les enjeux économiques et financiers?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous doué/e pour la résolution de problèmes logiques?",
-                        choix: null
-                    },
-                    {
-                        question: "Aimez-vous travailler avec des chiffres?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous intéressé/e par les lois et la justice?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous doué/e pour la négociation et la persuasion?",
-                        choix: null
-                    },
-                    {
-                        question: "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?",
-                        choix: null
-                    },
-                    {
-                        question: "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?",
-                        choix: null
-                    }
-                ],
-
+                quizz: {
+                    pc: [
+                        {
+                            question: "Aimez-vous résoudre des problèmes complexes?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous créatif/ve?",
+                            choix: null
+                        },
+                        {
+                            question: "Aimez-vous travailler avec des ordinateurs et des technologies?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous curieux/se de savoir comment les choses fonctionnent?",
+                            choix: null
+                        },
+                        {
+                            question: "Aimez-vous faire des expériences scientifiques?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous intéressé/e par les mathématiques et les statistiques?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous capable de penser de manière analytique?",
+                            choix: null
+                        },
+                        {
+                            question: "Avez-vous un bon sens de l'observation?",
+                            choix: null
+                        },
+                        {
+                            question: "Avez-vous un fort désir d'apprendre de nouvelles choses?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous capable de travailler en équipe?",
+                            choix: null
+                        },
+                        {
+                            question: "Avez-vous une forte éthique de travail?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous doué/e pour la communication?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous intéressé/e par les enjeux économiques et financiers?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous doué/e pour la résolution de problèmes logiques?",
+                            choix: null
+                        },
+                        {
+                            question: "Aimez-vous travailler avec des chiffres?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous intéressé/e par les lois et la justice?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous doué/e pour la négociation et la persuasion?",
+                            choix: null
+                        },
+                        {
+                            question: "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?",
+                            choix: null
+                        }
+                    ],
+                    sm_a_b: [
+                        {
+                            question: "Aimez-vous ddddddddddrésoudre des problèmes complexes?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous créatif/ve?",
+                            choix: null
+                        },
+                        {
+                            question: "Aimez-vous travailler avec des ordinateurs et des technologies?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous curieux/se de savoir comment les choses fonctionnent?",
+                            choix: null
+                        },
+                        {
+                            question: "Aimez-vous faire des expériences scientifiques?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous intéressé/e par les mathématiques et les statistiques?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous capable de penser de manière analytique?",
+                            choix: null
+                        },
+                        {
+                            question: "Avez-vous un bon sens de l'observation?",
+                            choix: null
+                        },
+                        {
+                            question: "Avez-vous un fort désir d'apprendre de nouvelles choses?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous capable de travailler en équipe?",
+                            choix: null
+                        },
+                        {
+                            question: "Avez-vous une forte éthique de travail?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous doué/e pour la communication?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous intéressé/e par les enjeux économiques et financiers?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous doué/e pour la résolution de problèmes logiques?",
+                            choix: null
+                        },
+                        {
+                            question: "Aimez-vous travailler avec des chiffres?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous intéressé/e par les lois et la justice?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous doué/e pour la négociation et la persuasion?",
+                            choix: null
+                        },
+                        {
+                            question: "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?",
+                            choix: null
+                        },
+                        {
+                            question: "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?",
+                            choix: null
+                        }
+                    ],
+                },
                 resultat: {
                     prem: {
                         filliere: null,
@@ -139,7 +222,12 @@ export default {
             settings: {
                 isStarted: false,
                 done: false,
-                test: true
+                test: true,
+                quizz: null,
+                typesBac: [
+                    'Sciences Physiques et Chimiques',
+                    'Sciences Mathématiques A et B'
+                ]
             }
         };
     },
@@ -150,6 +238,21 @@ export default {
                 this.$emit('update-prenom', this.datas.prenom);
                 this.$emit('update-nom', this.datas.nom);
                 console.log(this.datas);
+
+                //Quizz par type bac
+                switch (this.datas.type_bac) {
+                    case "Sciences Physiques et Chimiques":
+                        this.settings.quizz = this.ressources.quizz.pc;
+                        break;
+
+                    case "Sciences Mathématiques A et B":
+                        this.settings.quizz = this.ressources.quizz.sm_a_b;
+
+                        break;
+
+                    default:
+                        break;
+                }
                 axios
                     .post("/api/dataUser", this.datas)
                     .then((res) => {
@@ -160,8 +263,8 @@ export default {
                 this.$emit('update-is-done', true);
                 console.log(this.ressources.quizz);
                 var formData = {
-                    quizz: this.ressources.quizz,
-                    email: this.datas.email
+                    quizz: this.settings.quizz,
+                    datas: this.datas
                 }
 
                 axios
@@ -283,7 +386,7 @@ export default {
                             <div class="mb-3">
                                 <label class="form-label" for="bac-input">Type de votre BAC</label>
                                 <Multiselect id="bac-input" required v-model="datas.type_bac" :close-on-select="true"
-                                    :searchable="true" :options="['Sciences Physiques et Chimiques']" />
+                                    :searchable="true" :options="settings.typesBac" />
                             </div>
                         </div>
                         <div class="d-flex align-items-start gap-3 mt-4">
@@ -294,7 +397,7 @@ export default {
                         </div>
                     </div>
                     <template v-else>
-                        <div v-for="(el, i) in ressources.quizz" :key="i" class="mt-5 tab-pane fade show active"
+                        <div v-for="(el, i) in settings.quizz" :key="i" class="mt-5 tab-pane fade show active"
                             id="pills-gen-info">
                             <div>
                                 <div class="mb-0">
