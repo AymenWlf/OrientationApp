@@ -50,7 +50,7 @@ export default {
                             choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé/e par la compréhension des phénomènes physiques?",
+                            question: "Avez-vous un intérêt pour la biologie, la physiologie et les sciences de la santé?",
                             choix: null
                         },
                         {
@@ -74,7 +74,7 @@ export default {
                             choix: null
                         },
                         {
-                            question: "Avez-vous un fort désir d'apprendre de nouvelles choses?",
+                            question: "Vous sentez-vous concerné par les enjeux de santé publique et la prévention des maladies?",
                             choix: null
                         },
                         {
@@ -106,15 +106,15 @@ export default {
                             choix: null
                         },
                         {
-                            question: "Êtes-vous doué/e pour la négociation et la persuasion?",
-                            choix: null
-                        },
-                        {
                             question: "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous capable de travailler sous pression et de respecter des délais serrés?",
+                            question: "Êtes-vous intéressé par l'étude des algorithmes, des structures de données et de la complexité computationnelle pour résoudre des problèmes informatiques?",
+                            choix: null
+                        },
+                        {
+                            question: "Souhaitez-vous travailler dans un environnement médical ou paramédical pour aider les personnes malades ?",
                             choix: null
                         }
                     ],
@@ -132,7 +132,7 @@ export default {
                             choix: null
                         },
                         {
-                            question: "Avez-vous un intérêt pour la biologie, la physiologie et les sciences de la santé ?",
+                            question: "Avez-vous un intérêt pour la biologie, la physiologie et les sciences de la santé?",
                             choix: null
                         },
                         {
@@ -156,7 +156,7 @@ export default {
                             choix: null
                         },
                         {
-                            question: "Vous sentez-vous concerné par les enjeux de santé publique et la prévention des maladies ?",
+                            question: "Vous sentez-vous concerné par les enjeux de santé publique et la prévention des maladies?",
                             choix: null
                         },
                         {
@@ -176,7 +176,7 @@ export default {
                             choix: null
                         },
                         {
-                            question: "Souhaitez-vous travailler sur des défis concrets liés à l'énergie, l'environnement ou les transports?",
+                            question: "Êtes-vous intéressé par l'étude des algorithmes, des structures de données et de la complexité computationnelle pour résoudre des problèmes informatiques?",
                             choix: null
                         },
                         {
@@ -192,7 +192,7 @@ export default {
                             choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé par l'étude des algorithmes, des structures de données et de la complexité computationnelle pour résoudre des problèmes informatiques?",
+                            question: "Les questions juridiques, la régulation et la législation vous passionnent-elles?",
                             choix: null
                         },
                         {
@@ -200,6 +200,7 @@ export default {
                             choix: null
                         }
                     ]
+
                 },
                 resultat: {
                     prem: {
