@@ -132,6 +132,10 @@ export default {
                             choix: null
                         },
                         {
+                            question: "Avez-vous un intérêt pour la biologie, la physiologie et les sciences de la santé ?",
+                            choix: null
+                        },
+                        {
                             question: "Êtes-vous curieux d'apprendre la programmation informatique et de développer des solutions technologiques?",
                             choix: null
                         },
@@ -149,6 +153,10 @@ export default {
                         },
                         {
                             question: "Le droit, la régulation et la résolution de conflits juridiques vous captivent-ils?",
+                            choix: null
+                        },
+                        {
+                            question: "Vous sentez-vous concerné par les enjeux de santé publique et la prévention des maladies ?",
                             choix: null
                         },
                         {
@@ -184,19 +192,11 @@ export default {
                             choix: null
                         },
                         {
-                            question: "Les questions juridiques, la régulation et la législation vous passionnent-elles?",
-                            choix: null
-                        },
-                        {
-                            question: "Êtes-vous prêt à relever des défis et à apprendre continuellement dans le domaine que vous choisirez?",
-                            choix: null
-                        },
-                        {
-                            question: "Souhaitez-vous contribuer à la recherche et au développement dans votre domaine d'études futur?",
-                            choix: null
-                        },
-                        {
                             question: "Êtes-vous intéressé par l'étude des algorithmes, des structures de données et de la complexité computationnelle pour résoudre des problèmes informatiques?",
+                            choix: null
+                        },
+                        {
+                            question: "Souhaitez-vous travailler dans un environnement médical ou paramédical pour aider les personnes malades ?",
                             choix: null
                         }
                     ]

@@ -19,13 +19,13 @@ class IndexController extends AbstractController
     {
     }
     const CATEGORIE_PAR_BAC = [
-        "Sciences Mathématiques A et B" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Informatique", "Physique", "Économie", "Gestion", "Droit"],
-        "Sciences Physiques et Chimiques" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Physique", "Chimie", "Électronique", "Informatique", "Économie", "Gestion", "Droit"],
+        "Sciences Mathématiques A et B" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Informatique", "Physique", "Économie", "Gestion", "Droit", "Santé"],
+        "Sciences Physiques et Chimiques" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Physique", "Chimie", "Électronique", "Informatique", "Économie", "Gestion", "Droit", "Santé"],
         "Sciences de la Vie et de la Terre" => ["Sciences et Technologies", "Santé", "Sciences de l'Ingénieur", "Biologie", "Environnement", "Géologie", "Agriculture, Forêt et Environnement", "Économie", "Gestion", "Droit"],
         "Sciences Économiques" => ["Sciences Économiques et Gestion", "Droit et Sciences Politiques", "Économie Sociale et Solidaire", "Tourisme et Hôtellerie", "Communication et Marketing", "Ressources Humaines"],
+        "Lettres et Sciences Humaines" => ["Langues et Lettres", "Sciences Humaines et Sociales", "Tourisme et Hôtellerie", "Communication et Marketing", "Éducation, Culture et Patrimoine"],
         "Techniques de Gestion Comptable" => ["Sciences Économiques et Gestion", "Comptabilité", "Finance", "Gestion", "Droit et Sciences Politiques"],
         "Sciences Agronomiques" => ["Agriculture, Forêt et Environnement", "Sciences et Technologies", "Biologie", "Environnement", "Géologie", "Sciences de la Vie et de la Terre", "Économie", "Gestion", "Droit"],
-        "Lettres et Sciences Humaines" => ["Langues et Lettres", "Sciences Humaines et Sociales", "Tourisme et Hôtellerie", "Communication et Marketing", "Éducation, Culture et Patrimoine"],
         "Langues et Communication" => ["Langues et Lettres", "Arts, Audiovisuel et Communication", "Tourisme et Hôtellerie", "Communication et Marketing", "Éducation, Culture et Patrimoine"],
         "Sciences et Technologies Électriques" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Électricité", "Électronique", "Informatique", "Économie", "Gestion", "Droit"],
         "Sciences et Technologies Mécaniques" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Mécanique", "Électronique", "Informatique", "Économie", "Gestion", "Droit"]
@@ -92,28 +92,53 @@ class IndexController extends AbstractController
         "Avez-vous une aptitude pour la résolution de problèmes pratiques et concrets?" => [3, 4, 3, 3, 3, 3, 1, 1, 1]
     ];
 
+    //Sans santé
+    // const QST_SM_A_B = [
+    //     "Les mathématiques et la résolution de problèmes complexes vous passionnent-elles?" => [5, 5, 5, 5, 3, 3, 3],
+    //     "Trouvez-vous les domaines des sciences et technologies stimulants et captivants?" => [5, 5, 5, 5, 3, 3, 2],
+    //     "L'idée de concevoir, construire et analyser des systèmes techniques en tant qu'ingénieur vous attire-t-elle?" => [4, 5, 4, 4, 2, 2, 1],
+    //     "Êtes-vous curieux d'apprendre la programmation informatique et de développer des solutions technologiques?" => [4, 4, 5, 3, 3, 3, 2],
+    //     "La physique et la compréhension des lois qui gouvernent notre univers vous intéressent-elles?" => [4, 4, 3, 5, 2, 2, 1],
+    //     "L'étude de l'économie, des marchés et des politiques économiques vous semble-t-elle passionnante?" => [2, 2, 2, 2, 5, 4, 3],
+    //     "Aimeriez-vous apprendre la gestion d'entreprise, les ressources humaines et les stratégies de leadership?" => [2, 2, 2, 1, 4, 5, 3],
+    //     "Le droit, la régulation et la résolution de conflits juridiques vous captivent-ils?" => [1, 1, 1, 1, 3, 3, 5],
+    //     "Appréciez-vous travailler en équipe sur des projets scientifiques, technologiques ou techniques?" => [5, 5, 5, 5, 3, 3, 3],
+    //     "Aimeriez-vous résoudre des problèmes réels en utilisant les mathématiques et les modèles mathématiques?" => [5, 5, 5, 5, 3, 3, 2],
+    //     "Êtes-vous intéressé par l'analyse et la visualisation de données pour en tirer des conclusions pertinentes?" => [4, 4, 5, 4, 5, 4, 3],
+    //     "Aimez-vous comprendre et appliquer les dernières avancées technologiques?" => [5, 5, 5, 4, 3, 3, 2],
+    //     "Souhaitez-vous travailler sur des défis concrets liés à l'énergie, l'environnement ou les transports?" => [4, 5, 4, 4, 3, 3, 2],
+    //     "Êtes-vous passionné par l'application des mathématiques dans divers domaines, tels que la biologie ou la chimie?" => [5, 4, 4, 5, 3, 2, 1],
+    //     "Souhaitez-vous comprendre le fonctionnement des marchés financiers et le rôle de la politique économique?" => [2, 2, 2, 2, 5, 4, 3],
+    //     "Êtes-vous intéressé par l'organisation et la gestion de projets pour atteindre des objectifs spécifiques?" => [3, 3, 3, 2, 4, 5, 4],
+    //     "Les questions juridiques, la régulation et la législation vous passionnent-elles?" => [1, 1, 1, 1, 3, 3, 5],
+    //     "Êtes-vous prêt à relever des défis et à apprendre continuellement dans le domaine que vous choisirez?" => [5, 5, 5, 5, 5, 5, 5],
+    //     "Souhaitez-vous contribuer à la recherche et au développement dans votre domaine d'études futur?" => [4, 4, 4, 4, 4, 4, 4],
+    //     "Êtes-vous intéressé par l'étude des algorithmes, des structures de données et de la complexité computationnelle pour résoudre des problèmes informatiques?" => [4, 4, 5, 3, 2, 2, 1]
+    // ];
+
     const QST_SM_A_B = [
-        "Les mathématiques et la résolution de problèmes complexes vous passionnent-elles?" => [5, 5, 5, 5, 3, 3, 3],
-        "Trouvez-vous les domaines des sciences et technologies stimulants et captivants?" => [5, 5, 5, 5, 3, 3, 2],
-        "L'idée de concevoir, construire et analyser des systèmes techniques en tant qu'ingénieur vous attire-t-elle?" => [4, 5, 4, 4, 2, 2, 1],
-        "Êtes-vous curieux d'apprendre la programmation informatique et de développer des solutions technologiques?" => [4, 4, 5, 3, 3, 3, 2],
-        "La physique et la compréhension des lois qui gouvernent notre univers vous intéressent-elles?" => [4, 4, 3, 5, 2, 2, 1],
-        "L'étude de l'économie, des marchés et des politiques économiques vous semble-t-elle passionnante?" => [2, 2, 2, 2, 5, 4, 3],
-        "Aimeriez-vous apprendre la gestion d'entreprise, les ressources humaines et les stratégies de leadership?" => [2, 2, 2, 1, 4, 5, 3],
-        "Le droit, la régulation et la résolution de conflits juridiques vous captivent-ils?" => [1, 1, 1, 1, 3, 3, 5],
-        "Appréciez-vous travailler en équipe sur des projets scientifiques, technologiques ou techniques?" => [5, 5, 5, 5, 3, 3, 3],
-        "Aimeriez-vous résoudre des problèmes réels en utilisant les mathématiques et les modèles mathématiques?" => [5, 5, 5, 5, 3, 3, 2],
-        "Êtes-vous intéressé par l'analyse et la visualisation de données pour en tirer des conclusions pertinentes?" => [4, 4, 5, 4, 5, 4, 3],
-        "Aimez-vous comprendre et appliquer les dernières avancées technologiques?" => [5, 5, 5, 4, 3, 3, 2],
-        "Souhaitez-vous travailler sur des défis concrets liés à l'énergie, l'environnement ou les transports?" => [4, 5, 4, 4, 3, 3, 2],
-        "Êtes-vous passionné par l'application des mathématiques dans divers domaines, tels que la biologie ou la chimie?" => [5, 4, 4, 5, 3, 2, 1],
-        "Souhaitez-vous comprendre le fonctionnement des marchés financiers et le rôle de la politique économique?" => [2, 2, 2, 2, 5, 4, 3],
-        "Êtes-vous intéressé par l'organisation et la gestion de projets pour atteindre des objectifs spécifiques?" => [3, 3, 3, 2, 4, 5, 4],
-        "Les questions juridiques, la régulation et la législation vous passionnent-elles?" => [1, 1, 1, 1, 3, 3, 5],
-        "Êtes-vous prêt à relever des défis et à apprendre continuellement dans le domaine que vous choisirez?" => [5, 5, 5, 5, 5, 5, 5],
-        "Souhaitez-vous contribuer à la recherche et au développement dans votre domaine d'études futur?" => [4, 4, 4, 4, 4, 4, 4],
-        "Êtes-vous intéressé par l'étude des algorithmes, des structures de données et de la complexité computationnelle pour résoudre des problèmes informatiques?" => [4, 4, 5, 3, 2, 2, 1]
+        "Les mathématiques et la résolution de problèmes complexes vous passionnent-elles?" => [5, 5, 5, 5, 3, 3, 3, 0],
+        "Trouvez-vous les domaines des sciences et technologies stimulants et captivants?" => [5, 5, 5, 5, 3, 3, 2, 0],
+        "L'idée de concevoir, construire et analyser des systèmes techniques en tant qu'ingénieur vous attire-t-elle?" => [4, 5, 4, 4, 2, 2, 1, 0],
+        "Avez-vous un intérêt pour la biologie, la physiologie et les sciences de la santé ?" => [0, 0, 0, 0, 0, 0, 0, 5],
+        "Êtes-vous curieux d'apprendre la programmation informatique et de développer des solutions technologiques?" => [4, 4, 5, 3, 3, 3, 2, 0],
+        "La physique et la compréhension des lois qui gouvernent notre univers vous intéressent-elles?" => [4, 4, 3, 5, 2, 2, 1, 0],
+        "L'étude de l'économie, des marchés et des politiques économiques vous semble-t-elle passionnante?" => [0, 0, 0, 0, 5, 4, 3, 0],
+        "Aimeriez-vous apprendre la gestion d'entreprise, les ressources humaines et les stratégies de leadership?" => [0, 0, 0, 0, 4, 5, 3, 0],
+        "Le droit, la régulation et la résolution de conflits juridiques vous captivent-ils?" => [0, 0, 0, 0, 3, 3, 5, 0],
+        "Vous sentez-vous concerné par les enjeux de santé publique et la prévention des maladies ?" => [0, 0, 0, 0, 0, 0, 0, 5],
+        "Appréciez-vous travailler en équipe sur des projets scientifiques, technologiques ou techniques?" => [5, 5, 5, 5, 0, 0, 0, 0],
+        "Aimeriez-vous résoudre des problèmes réels en utilisant les mathématiques et les modèles mathématiques?" => [5, 5, 5, 5, 0, 0, 0, 0],
+        "Êtes-vous intéressé par l'analyse et la visualisation de données pour en tirer des conclusions pertinentes?" => [4, 4, 5, 4, 5, 4, 3, 0],
+        "Aimez-vous comprendre et appliquer les dernières avancées technologiques?" => [5, 5, 5, 4, 0, 0, 0, 0],
+        "Souhaitez-vous travailler sur des défis concrets liés à l'énergie, l'environnement ou les transports?" => [4, 5, 4, 4, 0, 0, 0, 0],
+        "Êtes-vous passionné par l'application des mathématiques dans divers domaines, tels que la biologie ou la chimie?" => [5, 4, 4, 5, 0, 0, 0, 0],
+        "Souhaitez-vous comprendre le fonctionnement des marchés financiers et le rôle de la politique économique?" => [0, 0, 0, 0, 5, 4, 3, 0],
+        "Êtes-vous intéressé par l'organisation et la gestion de projets pour atteindre des objectifs spécifiques?" => [0, 0, 0, 0, 4, 5, 4, 0],
+        "Les questions juridiques, la régulation et la législation vous passionnent-elles?" => [0, 0, 0, 0, 3, 3, 5, 0],
+        "Souhaitez-vous travailler dans un environnement médical ou paramédical pour aider les personnes malades ?" => [0, 0, 0, 0, 0, 0, 0, 5]
     ];
+
 
     #[Route('/get/qst', name: 'get.qst', methods: ["GET"])]
     public function getQst(): Response
