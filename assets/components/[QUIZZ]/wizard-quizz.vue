@@ -38,86 +38,57 @@ export default {
                 quizz: {
                     pc: [
                         {
-                            question: "Aimez-vous résoudre des problèmes complexes?",
+                            question: "Aimez-vous les sciences et la technologie ?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous créatif/ve?",
+                            question: "Aimez-vous résoudre des problèmes mathématiques ?",
                             choix: null
                         },
                         {
-                            question: "Aimez-vous travailler avec des ordinateurs et des technologies?",
+                            question: "Aimez-vous la physique et la chimie ?",
                             choix: null
                         },
                         {
-                            question: "Avez-vous un intérêt pour la biologie, la physiologie et les sciences de la santé?",
+                            question: "Êtes-vous intéressé par les langues étrangères ?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous curieux/se de savoir comment les choses fonctionnent?",
+                            question: "Aimez-vous travailler en équipe ?",
                             choix: null
                         },
                         {
-                            question: "Aimez-vous faire des expériences scientifiques?",
+                            question: "Êtes-vous intéressé par les métiers liés à la santé ?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé/e par les mathématiques et les statistiques?",
+                            question: "Aimez-vous être créatif ou artistique ?",
                             choix: null
                         },
                         {
-                            question: "Êtes-vous capable de penser de manière analytique?",
+                            question: "Avez-vous des compétences en programmation ?",
                             choix: null
                         },
                         {
-                            question: "Avez-vous un bon sens de l'observation?",
+                            question: "Êtes-vous intéressé par la gestion d'entreprise ?",
                             choix: null
                         },
                         {
-                            question: "Vous sentez-vous concerné par les enjeux de santé publique et la prévention des maladies?",
+                            question: "Avez-vous des compétences en résolution de problèmes juridiques ?",
                             choix: null
                         },
-                        {
-                            question: "Êtes-vous capable de travailler en équipe?",
-                            choix: null
-                        },
-                        {
-                            question: "Avez-vous une forte éthique de travail?",
-                            choix: null
-                        },
-                        {
-                            question: "Êtes-vous doué/e pour la communication?",
-                            choix: null
-                        },
-                        {
-                            question: "Êtes-vous intéressé/e par les enjeux économiques et financiers?",
-                            choix: null
-                        },
-                        {
-                            question: "Êtes-vous doué/e pour la résolution de problèmes logiques?",
-                            choix: null
-                        },
-                        {
-                            question: "Aimez-vous travailler avec des chiffres?",
-                            choix: null
-                        },
-                        {
-                            question: "Êtes-vous intéressé/e par les lois et la justice?",
-                            choix: null
-                        },
-                        {
-                            question: "Avez-vous une passion pour l'entrepreneuriat et la création d'entreprise?",
-                            choix: null
-                        },
-                        {
-                            question: "Êtes-vous intéressé par l'étude des algorithmes, des structures de données et de la complexité computationnelle pour résoudre des problèmes informatiques?",
-                            choix: null
-                        },
-                        {
-                            question: "Souhaitez-vous travailler dans un environnement médical ou paramédical pour aider les personnes malades ?",
-                            choix: null
-                        }
-                    ],
+                        { question: "Êtes-vous à l'aise avec l'écriture ou la communication ?", choix: null },
+                        { question: "Êtes-vous intéressé par les arts visuels ou les métiers d'art ?", choix: null },
+                        { question: "Êtes-vous intéressé par les métiers de l'environnement ou de l'agriculture ?", choix: null },
+                        { question: "Êtes-vous à l'aise avec la résolution de problèmes techniques ?", choix: null },
+                        { question: "Êtes-vous intéressé par les métiers du social et de l'humanitaire ?", choix: null },
+                        { question: "Êtes-vous à l'aise avec l'analyse financière ou la comptabilité ?", choix: null },
+                        { question: "Êtes-vous intéressé par les métiers de l'audiovisuel ou de la communication digitale ?", choix: null },
+                        { question: "Êtes-vous à l'aise avec la gestion de projets ?", choix: null },
+                        { question: "Êtes-vous intéressé par les métiers de la création artistique ou du design ?", choix: null },
+                        { question: "Êtes-vous à l'aise avec l'informatique et les nouvelles technologies ?", choix: null }
+                    ]
+                    ,
                     sm_a_b: [
                         {
                             question: "Les mathématiques et la résolution de problèmes complexes vous passionnent-elles?",
@@ -198,7 +169,8 @@ export default {
                         {
                             question: "Souhaitez-vous travailler dans un environnement médical ou paramédical pour aider les personnes malades ?",
                             choix: null
-                        }
+                        },
+
                     ]
 
                 },
