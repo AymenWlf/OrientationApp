@@ -19,7 +19,16 @@ class IndexController extends AbstractController
     {
     }
     const CATEGORIE_PAR_BAC = [
-        "Sciences Mathématiques A et B" => ["Sciences et Technologies", "Sciences de l'Ingénieur", "Informatique", "Physique", "Économie", "Gestion", "Droit", "Santé"],
+        "Sciences Mathématiques A et B" => [
+            "Ingénierie",
+            "Médecine et santé",
+            "Informatique et technologies de l'information",
+            "Sciences économiques et de gestion",
+            "Physique et chimie",
+            "Mathématiques et statistiques",
+            "Architecture et urbanisme",
+            "Éducation et enseignement"
+        ],
         "Sciences Physiques et Chimiques" => [
             "Scientifiques et techniques",
             "Médicales et paramédicales",
@@ -30,7 +39,16 @@ class IndexController extends AbstractController
             "Commerce et marketing",
             "Tourisme et hôtellerie"
         ],
-        "Sciences de la Vie et de la Terre" => ["Sciences et Technologies", "Santé", "Sciences de l'Ingénieur", "Biologie", "Environnement", "Géologie", "Agriculture, Forêt et Environnement", "Économie", "Gestion", "Droit"],
+        "Sciences de la Vie et de la Terre" => [
+            "Ingénierie",
+            "Médecine et santé",
+            "Informatique et technologies de l'information",
+            "Sciences économiques et de gestion",
+            "Physique et chimie",
+            "Mathématiques et statistiques",
+            "Architecture et urbanisme",
+            "Éducation et enseignement"
+        ],
         "Sciences Économiques" => ["Sciences Économiques et Gestion", "Droit et Sciences Politiques", "Économie Sociale et Solidaire", "Tourisme et Hôtellerie", "Communication et Marketing", "Ressources Humaines"],
         "Lettres et Sciences Humaines" => ["Langues et Lettres", "Sciences Humaines et Sociales", "Tourisme et Hôtellerie", "Communication et Marketing", "Éducation, Culture et Patrimoine"],
         "Techniques de Gestion Comptable" => ["Sciences Économiques et Gestion", "Comptabilité", "Finance", "Gestion", "Droit et Sciences Politiques"],
@@ -52,15 +70,16 @@ class IndexController extends AbstractController
             "Cette filière regroupe les métiers liés à l'hôtellerie, la restauration, le tourisme et les loisirs, tels que les métiers de l'hôtellerie, les métiers de la restauration, le tourisme, le sport, l'événementiel, etc."
         ],
         "Sciences Mathématiques A et B" => [
-            "Cette filière regroupe l'ensemble des disciplines scientifiques et technologiques qui permettent de comprendre le fonctionnement de notre univers et de développer de nouvelles technologies.",
-            "Cette filière forme des ingénieurs capables de concevoir, de réaliser et de gérer des projets techniques et scientifiques.",
-            "La filière d'informatique forme des professionnels capables de concevoir, de développer et de gérer des systèmes informatiques complexes.",
-            "La filière de physique permet d'étudier les lois de l'univers et d'acquérir les connaissances nécessaires pour comprendre et résoudre des problèmes complexes.",
-            "La filière d'économie permet de comprendre le fonctionnement de l'économie mondiale et de développer des compétences en gestion et en analyse économique.",
-            "La filière de gestion forme des professionnels capables de gérer efficacement les entreprises et les organisations dans un contexte économique complexe.",
-            "La filière de droit permet d'acquérir les connaissances nécessaires pour comprendre les lois et les réglementations qui régissent notre société et de développer des compétences en analyse juridique.",
-            "La filière de santé permet d'étudier le corps humain, les maladies, les traitements et les thérapies pour aider les personnes à maintenir ou améliorer leur état de santé.",
-        ],
+            "Cette filière regroupe les métiers de l'ingénierie et de la technologie, tels que l'ingénierie civile, l'ingénierie industrielle, l'ingénierie mécanique, l'ingénierie électrique, etc.",
+            "Cette filière regroupe les métiers de la médecine et de la santé, tels que la médecine générale, la chirurgie, la dentisterie, la pharmacie, la physiothérapie, etc.",
+            "Cette filière regroupe les métiers liés à l'informatique et aux technologies numériques, tels que la programmation, le développement web et mobile, l'analyse de données, la cybersécurité, la conception de jeux vidéo, etc.",
+            "Cette filière regroupe les métiers de la gestion et de l'économie, tels que le management, la finance, la comptabilité, le marketing, les ressources humaines, etc.",
+            "Cette filière regroupe les métiers liés aux sciences physiques et chimiques, tels que la physique, la chimie, la biologie, la géologie, l'environnement, etc.",
+            "Cette filière regroupe les métiers liés aux mathématiques et aux statistiques, tels que les mathématiques appliquées, la modélisation mathématique, la statistique, l'analyse de données, etc.",
+            "Cette filière regroupe les métiers de l'architecture et de l'urbanisme, tels que l'architecture, l'urbanisme, l'aménagement du territoire, la construction, etc.",
+            "Cette filière regroupe les métiers de l'éducation et de l'enseignement, tels que l'enseignement primaire et secondaire, l'enseignement supérieur, la formation professionnelle, etc."
+        ]
+
     ];
 
     const TYPE_BAC = [
@@ -101,26 +120,29 @@ class IndexController extends AbstractController
     ];
 
     const QST_SM_A_B = [
-        "Les mathématiques et la résolution de problèmes complexes vous passionnent-elles?" => [5, 5, 5, 5, 3, 3, 3, 0],
-        "Trouvez-vous les domaines des sciences et technologies stimulants et captivants?" => [5, 5, 5, 5, 3, 3, 2, 0],
-        "L'idée de concevoir, construire et analyser des systèmes techniques en tant qu'ingénieur vous attire-t-elle?" => [4, 5, 4, 4, 2, 2, 1, 0],
-        "Avez-vous un intérêt pour la biologie, la physiologie et les sciences de la santé ?" => [0, 0, 0, 0, 0, 0, 0, 5],
-        "Êtes-vous curieux d'apprendre la programmation informatique et de développer des solutions technologiques?" => [4, 4, 5, 3, 3, 3, 2, 0],
-        "La physique et la compréhension des lois qui gouvernent notre univers vous intéressent-elles?" => [4, 4, 3, 5, 2, 2, 1, 0],
-        "L'étude de l'économie, des marchés et des politiques économiques vous semble-t-elle passionnante?" => [0, 0, 0, 0, 5, 4, 3, 0],
-        "Aimeriez-vous apprendre la gestion d'entreprise, les ressources humaines et les stratégies de leadership?" => [0, 0, 0, 0, 4, 5, 3, 0],
-        "Le droit, la régulation et la résolution de conflits juridiques vous captivent-ils?" => [0, 0, 0, 0, 3, 3, 5, 0],
-        "Vous sentez-vous concerné par les enjeux de santé publique et la prévention des maladies ?" => [0, 0, 0, 0, 0, 0, 0, 5],
-        "Appréciez-vous travailler en équipe sur des projets scientifiques, technologiques ou techniques?" => [5, 5, 5, 5, 0, 0, 0, 0],
-        "Aimeriez-vous résoudre des problèmes réels en utilisant les mathématiques et les modèles mathématiques?" => [5, 5, 5, 5, 0, 0, 0, 0],
-        "Êtes-vous intéressé par l'analyse et la visualisation de données pour en tirer des conclusions pertinentes?" => [4, 4, 5, 4, 5, 4, 3, 0],
-        "Aimez-vous comprendre et appliquer les dernières avancées technologiques?" => [5, 5, 5, 4, 0, 0, 0, 0],
-        "Êtes-vous intéressé par l'étude des algorithmes, des structures de données et de la complexité computationnelle pour résoudre des problèmes informatiques?" => [4, 4, 5, 3, 2, 2, 1, 0],
-        "Êtes-vous passionné par l'application des mathématiques dans divers domaines, tels que la biologie ou la chimie?" => [5, 4, 4, 5, 0, 0, 0, 0],
-        "Souhaitez-vous comprendre le fonctionnement des marchés financiers et le rôle de la politique économique?" => [0, 0, 0, 0, 5, 4, 3, 0],
-        "Êtes-vous intéressé par l'organisation et la gestion de projets pour atteindre des objectifs spécifiques?" => [0, 0, 0, 0, 4, 5, 4, 0],
-        "Les questions juridiques, la régulation et la législation vous passionnent-elles?" => [0, 0, 0, 0, 3, 3, 5, 0],
-        "Souhaitez-vous travailler dans un environnement médical ou paramédical pour aider les personnes malades ?" => [0, 0, 0, 0, 0, 0, 0, 5]
+        "Êtes-vous intéressé par la science et la technologie ?" => [5, 0, 4, 3, 3, 4, 2, 0],
+        "Êtes-vous intéressé par l'informatique et la technologie de l'information ?" => [4, 0, 5, 3, 2, 3, 1, 0],
+        "Êtes-vous intéressé par la gestion d'entreprise ?" => [2, 0, 5, 5, 2, 2, 3, 0],
+        "Êtes-vous créatif et passionné par l'architecture et la conception ?" => [2, 0, 2, 1, 1, 1, 5, 0],
+        "Avez-vous de bonnes compétences en physique et chimie ?" => [4, 0, 1, 1, 5, 4, 0, 0],
+        "Avez-vous un esprit logique et aimez-vous résoudre des problèmes mathématiques ?" => [3, 0, 3, 3, 2, 5, 1, 0],
+        "Êtes-vous à l'aise avec les mathématiques et les statistiques ?" => [3, 0, 2, 2, 1, 5, 1, 0],
+        "Aimez-vous travailler sur des projets de construction et de design urbain ?" => [1, 0, 1, 1, 1, 1, 5, 0],
+        "Êtes-vous intéressé par l'enseignement et le partage des connaissances ?" => [1, 0, 1, 1, 1, 1, 1, 5],
+        "Êtes-vous intéressé par les sciences médicales et la santé humaine ?" => [0, 5, 1, 0, 4, 2, 0, 0],
+
+
+        "Êtes-vous capable de communiquer efficacement avec les autres ?" => [2, 0, 2, 2, 1, 1, 2, 4],
+        "Aimez-vous travailler avec des enfants et des jeunes ?" => [1, 0, 1, 1, 1, 1, 1, 4],
+        "Êtes-vous intéressé par les sciences sociales et le comportement humain ?" => [1, 0, 3, 5, 1, 1, 1, 2],
+        "Aimez-vous travailler avec des ordinateurs et des logiciels ?" => [3, 0, 5, 2, 1, 2, 1, 0],
+        "Êtes-vous intéressé par la conception de systèmes électroniques et électriques ?" => [4, 0, 1, 1, 1, 2, 1, 0],
+        "Êtes-vous intéressé par la recherche scientifique et le développement de nouvelles technologies ?" => [5, 0, 5, 1, 1, 2, 1, 0],
+        "Êtes-vous intéressé par la psychologie et la santé mentale ?" => [1, 0, 1, 3, 1, 2, 1, 1],
+        "Aimez-vous travailler avec des chiffres et des données financières ?" => [1, 0, 5, 5, 1, 3, 1, 0],
+        "Aimez-vous résoudre des problèmes complexes et travailler en équipe ?" => [4, 0, 3, 3, 1, 3, 2, 0],
+        "Aimez-vous travailler avec des machines et des outils ?" => [4, 0, 1, 1, 1, 1, 2, 0],
+
     ];
 
 

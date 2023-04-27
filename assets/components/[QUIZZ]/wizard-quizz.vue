@@ -91,86 +91,85 @@ export default {
                     ,
                     sm_a_b: [
                         {
-                            question: "Les mathématiques et la résolution de problèmes complexes vous passionnent-elles?",
-                            choix: null
+                            question: "Êtes-vous intéressé par la science et la technologie ?",
+                            choix: null,
                         },
                         {
-                            question: "Trouvez-vous les domaines des sciences et technologies stimulants et captivants?",
-                            choix: null
+                            question: "Êtes-vous intéressé par l'informatique et la technologie de l'information ?",
+                            choix: null,
                         },
                         {
-                            question: "L'idée de concevoir, construire et analyser des systèmes techniques en tant qu'ingénieur vous attire-t-elle?",
-                            choix: null
+                            question: "Êtes-vous intéressé par la gestion d'entreprise ?",
+                            choix: null,
                         },
                         {
-                            question: "Avez-vous un intérêt pour la biologie, la physiologie et les sciences de la santé?",
-                            choix: null
+                            question: "Êtes-vous créatif et passionné par l'architecture et la conception ?",
+                            choix: null,
                         },
                         {
-                            question: "Êtes-vous curieux d'apprendre la programmation informatique et de développer des solutions technologiques?",
-                            choix: null
+                            question: "Avez-vous de bonnes compétences en physique et chimie ?",
+                            choix: null,
                         },
                         {
-                            question: "La physique et la compréhension des lois qui gouvernent notre univers vous intéressent-elles?",
-                            choix: null
+                            question: "Avez-vous un esprit logique et aimez-vous résoudre des problèmes mathématiques ?",
+                            choix: null,
                         },
                         {
-                            question: "L'étude de l'économie, des marchés et des politiques économiques vous semble-t-elle passionnante?",
-                            choix: null
+                            question: "Êtes-vous à l'aise avec les mathématiques et les statistiques ?",
+                            choix: null,
                         },
                         {
-                            question: "Aimeriez-vous apprendre la gestion d'entreprise, les ressources humaines et les stratégies de leadership?",
-                            choix: null
+                            question: "Aimez-vous travailler sur des projets de construction et de design urbain ?",
+                            choix: null,
                         },
                         {
-                            question: "Le droit, la régulation et la résolution de conflits juridiques vous captivent-ils?",
-                            choix: null
+                            question: "Êtes-vous intéressé par l'enseignement et le partage des connaissances ?",
+                            choix: null,
                         },
                         {
-                            question: "Vous sentez-vous concerné par les enjeux de santé publique et la prévention des maladies?",
-                            choix: null
+                            question: "Êtes-vous intéressé par les sciences médicales et la santé humaine ?",
+                            choix: null,
                         },
                         {
-                            question: "Appréciez-vous travailler en équipe sur des projets scientifiques, technologiques ou techniques?",
-                            choix: null
+                            question: "Êtes-vous capable de communiquer efficacement avec les autres ?",
+                            choix: null,
                         },
                         {
-                            question: "Aimeriez-vous résoudre des problèmes réels en utilisant les mathématiques et les modèles mathématiques?",
-                            choix: null
+                            question: "Aimez-vous travailler avec des enfants et des jeunes ?",
+                            choix: null,
                         },
                         {
-                            question: "Êtes-vous intéressé par l'analyse et la visualisation de données pour en tirer des conclusions pertinentes?",
-                            choix: null
+                            question: "Êtes-vous intéressé par les sciences sociales et le comportement humain ?",
+                            choix: null,
                         },
                         {
-                            question: "Aimez-vous comprendre et appliquer les dernières avancées technologiques?",
-                            choix: null
+                            question: "Aimez-vous travailler avec des ordinateurs et des logiciels ?",
+                            choix: null,
                         },
                         {
-                            question: "Êtes-vous intéressé par l'étude des algorithmes, des structures de données et de la complexité computationnelle pour résoudre des problèmes informatiques?",
-                            choix: null
+                            question: "Êtes-vous intéressé par la conception de systèmes électroniques et électriques ?",
+                            choix: null,
                         },
                         {
-                            question: "Êtes-vous passionné par l'application des mathématiques dans divers domaines, tels que la biologie ou la chimie?",
-                            choix: null
+                            question: "Êtes-vous intéressé par la recherche scientifique et le développement de nouvelles technologies ?",
+                            choix: null,
                         },
                         {
-                            question: "Souhaitez-vous comprendre le fonctionnement des marchés financiers et le rôle de la politique économique?",
-                            choix: null
+                            question: "Êtes-vous intéressé par la psychologie et la santé mentale ?",
+                            choix: null,
                         },
                         {
-                            question: "Êtes-vous intéressé par l'organisation et la gestion de projets pour atteindre des objectifs spécifiques?",
-                            choix: null
+                            question: "Aimez-vous travailler avec des chiffres et des données financières ?",
+                            choix: null,
                         },
                         {
-                            question: "Les questions juridiques, la régulation et la législation vous passionnent-elles?",
-                            choix: null
+                            question: "Aimez-vous résoudre des problèmes complexes et travailler en équipe ?",
+                            choix: null,
                         },
                         {
-                            question: "Souhaitez-vous travailler dans un environnement médical ou paramédical pour aider les personnes malades ?",
-                            choix: null
-                        },
-
+                            question: "Aimez-vous travailler avec des machines et des outils ?",
+                            choix: null,
+                        }
                     ]
 
                 },
