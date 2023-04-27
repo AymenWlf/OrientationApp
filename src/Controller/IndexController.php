@@ -39,6 +39,13 @@ class IndexController extends AbstractController
             "Commerce et marketing",
             "Tourisme et hôtellerie"
         ],
+        "Sciences Économiques" => [
+            "Économie et Gestion",
+            "Commerce et Marketing",
+            "Management et Entrepreneuriat",
+            "Finances et Banque",
+            "Statistique et Analyse des Données"
+        ],
         "Sciences de la Vie et de la Terre" => [
             "Ingénierie",
             "Médecine et santé",
@@ -49,7 +56,6 @@ class IndexController extends AbstractController
             "Architecture et urbanisme",
             "Éducation et enseignement"
         ],
-        "Sciences Économiques" => ["Sciences Économiques et Gestion", "Droit et Sciences Politiques", "Économie Sociale et Solidaire", "Tourisme et Hôtellerie", "Communication et Marketing", "Ressources Humaines"],
         "Lettres et Sciences Humaines" => ["Langues et Lettres", "Sciences Humaines et Sociales", "Tourisme et Hôtellerie", "Communication et Marketing", "Éducation, Culture et Patrimoine"],
         "Techniques de Gestion Comptable" => ["Sciences Économiques et Gestion", "Comptabilité", "Finance", "Gestion", "Droit et Sciences Politiques"],
         "Sciences Agronomiques" => ["Agriculture, Forêt et Environnement", "Sciences et Technologies", "Biologie", "Environnement", "Géologie", "Sciences de la Vie et de la Terre", "Économie", "Gestion", "Droit"],
@@ -78,8 +84,14 @@ class IndexController extends AbstractController
             "Cette filière regroupe les métiers liés aux mathématiques et aux statistiques, tels que les mathématiques appliquées, la modélisation mathématique, la statistique, l'analyse de données, etc.",
             "Cette filière regroupe les métiers de l'architecture et de l'urbanisme, tels que l'architecture, l'urbanisme, l'aménagement du territoire, la construction, etc.",
             "Cette filière regroupe les métiers de l'éducation et de l'enseignement, tels que l'enseignement primaire et secondaire, l'enseignement supérieur, la formation professionnelle, etc."
+        ],
+        "Sciences Économiques" => [
+            "Cette filière regroupe les métiers de la gestion et de l'économie, tels que la planification stratégique, la gestion de projets, la gestion de la chaîne d'approvisionnement, la gestion des ressources humaines, la gestion des opérations, etc.",
+            "Cette filière regroupe les métiers liés à la vente, à la publicité, au marketing et aux relations publiques, tels que la gestion des ventes, la recherche de marché, la planification des événements, la publicité et les relations publiques, etc.",
+            "Cette filière regroupe les métiers liés à la gestion des entreprises et de leurs activités, tels que la gestion des opérations, la gestion des finances, la gestion des ressources humaines, la gestion de la chaîne d'approvisionnement, etc.",
+            "Cette filière regroupe les métiers liés aux finances et à la banque, tels que la gestion de portefeuille, la gestion des risques, la comptabilité, la finance d'entreprise, la banque d'investissement, etc.",
+            "Cette filière regroupe les métiers liés à l'analyse de données, à la recherche et à la modélisation, tels que l'analyse statistique, la modélisation mathématique, la recherche opérationnelle, l'économétrie, etc."
         ]
-
     ];
 
     const TYPE_BAC = [
@@ -145,6 +157,31 @@ class IndexController extends AbstractController
 
     ];
 
+    const QST_ECO = [
+        "Aimez-vous travailler avec les chiffres et faire des calculs mathématiques ?" => [4, 2, 4, 5, 2],
+        "Préférez-vous travailler en équipe ?" => [1, 3, 3, 2, 1],
+        "Êtes-vous créatif(ve) et aimez-vous imaginer de nouvelles idées ?" => [2, 2, 5, 2, 2],
+        "Avez-vous un intérêt pour la technologie et l'informatique ?" => [2, 2, 5, 2, 2],
+        "Aimez-vous résoudre des problèmes complexes ?" => [4, 3, 4, 3, 4],
+        "Êtes-vous à l'aise pour prendre la parole en public ?" => [3, 3, 3, 3, 3],
+        "Avez-vous un intérêt pour les sciences médicales et la santé humaine ?" => [1, 1, 2, 1, 1],
+        "Aimez-vous organiser et planifier des événements ?" => [2, 2, 3, 2, 2],
+        "Avez-vous un intérêt pour l'histoire et la géographie ?" => [2, 2, 2, 2, 2],
+        "Aimez-vous dessiner et concevoir des objets ou des plans ?" => [1, 1, 3, 1, 1],
+
+        "Avez-vous un intérêt pour la politique et les relations internationales ?" => [4, 3, 4, 3, 2],
+        "Aimez-vous travailler avec vos mains et manipuler des objets ?" => [2, 2, 2, 2, 1],
+        "Êtes-vous à l'aise pour gérer des budgets et des finances ?" => [5, 3, 5, 4, 2],
+        "Avez-vous un intérêt pour la nature et l'environnement ?" => [2, 2, 2, 5, 1],
+        "Êtes-vous curieux(se) et aimez-vous apprendre de nouvelles choses ?" => [3, 3, 3, 3, 3],
+        "Aimez-vous enseigner et partager vos connaissances avec les autres ?" => [2, 2, 3, 2, 2],
+        "Avez-vous un intérêt pour les arts et la culture ?" => [3, 4, 3, 3, 2],
+        "Êtes-vous à l'aise avec l'utilisation de la langue anglaise ?" => [4, 4, 4, 4, 2],
+        "Aimez-vous diriger et prendre des décisions importantes ?" => [3, 3, 5, 3, 2],
+        "Avez-vous un intérêt pour les entreprises et la gestion d'entreprise ?" => [5, 4, 5, 4, 2],
+
+    ];
+
 
     #[Route('/get/qst', name: 'get.qst', methods: ["GET"])]
     public function getQst(): Response
@@ -167,6 +204,9 @@ class IndexController extends AbstractController
                 break;
             case "Sciences Mathématiques A et B":
                 $arrayQst = self::QST_SM_A_B;
+                break;
+            case "Sciences Économiques":
+                $arrayQst = self::QST_ECO;
                 break;
 
             default:

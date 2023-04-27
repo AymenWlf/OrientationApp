@@ -170,7 +170,90 @@ export default {
                             question: "Aimez-vous travailler avec des machines et des outils ?",
                             choix: null,
                         }
+                    ],
+                    eco: [
+                        {
+                            question: "Aimez-vous travailler avec les chiffres et faire des calculs mathématiques ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Préférez-vous travailler en équipe ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Êtes-vous créatif(ve) et aimez-vous imaginer de nouvelles idées ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Avez-vous un intérêt pour la technologie et l'informatique ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Aimez-vous résoudre des problèmes complexes ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Êtes-vous à l'aise pour prendre la parole en public ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Avez-vous un intérêt pour les sciences médicales et la santé humaine ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Aimez-vous organiser et planifier des événements ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Avez-vous un intérêt pour l'histoire et la géographie ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Aimez-vous dessiner et concevoir des objets ou des plans ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Avez-vous un intérêt pour la politique et les relations internationales ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Aimez-vous travailler avec vos mains et manipuler des objets ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Êtes-vous à l'aise pour gérer des budgets et des finances ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Avez-vous un intérêt pour la nature et l'environnement ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Êtes-vous curieux(se) et aimez-vous apprendre de nouvelles choses ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Aimez-vous enseigner et partager vos connaissances avec les autres ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Avez-vous un intérêt pour les arts et la culture ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Êtes-vous à l'aise avec l'utilisation de la langue anglaise ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Aimez-vous diriger et prendre des décisions importantes ?",
+                            choices: null,
+                        },
+                        {
+                            question: "Avez-vous un intérêt pour les entreprises et la gestion d'entreprise ?",
+                            choices: null,
+                        }
                     ]
+
 
                 },
                 resultat: {
@@ -198,7 +281,8 @@ export default {
                 quizz: null,
                 typesBac: [
                     'Sciences Physiques et Chimiques',
-                    'Sciences Mathématiques A et B'
+                    'Sciences Mathématiques A et B',
+                    "Sciences Économiques"
                 ]
             }
         };
@@ -219,7 +303,10 @@ export default {
 
                     case "Sciences Mathématiques A et B":
                         this.settings.quizz = this.ressources.quizz.sm_a_b;
+                        break;
 
+                    case "Sciences Économiques":
+                        this.settings.quizz = this.ressources.quizz.eco;
                         break;
 
                     default:
