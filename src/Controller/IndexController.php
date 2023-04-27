@@ -124,12 +124,12 @@ class IndexController extends AbstractController
         "Êtes-vous intéressé par l'informatique et la technologie de l'information ?" => [4, 0, 5, 3, 2, 3, 1, 0],
         "Êtes-vous intéressé par la gestion d'entreprise ?" => [2, 0, 3, 5, 2, 2, 3, 0],
         "Êtes-vous créatif et passionné par l'architecture et la conception ?" => [2, 0, 2, 1, 1, 1, 5, 0],
-        "Avez-vous de bonnes compétences en physique et chimie ?" => [4, 0, 1, 1, 5, 4, 0, 0],
+        "Avez-vous de bonnes compétences en physique et chimie ?" => [4, 0, 0, 1, 5, 4, 0, 0],
         "Avez-vous un esprit logique et aimez-vous résoudre des problèmes mathématiques ?" => [3, 0, 2, 3, 2, 5, 1, 0],
         "Êtes-vous à l'aise avec les mathématiques et les statistiques ?" => [3, 0, 2, 2, 1, 5, 1, 0],
-        "Aimez-vous travailler sur des projets de construction et de design urbain ?" => [1, 0, 1, 1, 1, 1, 5, 0],
+        "Aimez-vous travailler sur des projets de construction et de design urbain ?" => [1, 0, 0, 1, 1, 1, 5, 0],
         "Êtes-vous intéressé par l'enseignement et le partage des connaissances ?" => [1, 0, 1, 1, 1, 1, 1, 5],
-        "Êtes-vous intéressé par les sciences médicales et la santé humaine ?" => [0, 5, 1, 0, 4, 2, 0, 0],
+        "Êtes-vous intéressé par les sciences médicales et la santé humaine ?" => [0, 5, 0, 0, 4, 2, 0, 0],
 
 
         "Êtes-vous capable de communiquer efficacement avec les autres ?" => [2, 0, 2, 2, 1, 1, 2, 4],
