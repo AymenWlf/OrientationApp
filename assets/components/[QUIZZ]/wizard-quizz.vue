@@ -88,9 +88,7 @@ export default {
                         { question: "Aimez-vous résoudre des problèmes complexes en utilisant la technologie ?", choix: null },
                         { question: "Avez-vous une passion pour l'innovation et les nouvelles technologies ?", choix: null }
 
-                    ]
-
-                    ,
+                    ],
                     sm_a_b: [
                         {
                             question: "Êtes-vous intéressé(e) par les sciences ?",
@@ -176,88 +174,86 @@ export default {
                     ],
                     eco: [
                         {
-                            question: "Aimez-vous travailler avec les chiffres et faire des calculs mathématiques ?",
-                            choices: null,
+                            question: "Êtes-vous intéressé(e) par les questions liées à l'argent et aux finances ?",
+                            choix: null
                         },
                         {
-                            question: "Préférez-vous travailler en équipe ?",
-                            choices: null,
+                            question: "Avez-vous une aptitude pour la gestion de projet et l'organisation ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous créatif(ve) et aimez-vous imaginer de nouvelles idées ?",
-                            choices: null,
+                            question: "Aimez-vous aider les autres à résoudre leurs problèmes et à trouver des solutions ?",
+                            choix: null
                         },
                         {
-                            question: "Avez-vous un intérêt pour la technologie et l'informatique ?",
-                            choices: null,
+                            question: "Avez-vous une passion pour la justice sociale et l'égalité ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous résoudre des problèmes complexes ?",
-                            choices: null,
+                            question: "Êtes-vous à l'aise pour parler en public ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous à l'aise pour prendre la parole en public ?",
-                            choices: null,
+                            question: "Êtes-vous intéressé(e) par le commerce et les affaires ?",
+                            choix: null
                         },
                         {
-                            question: "Avez-vous un intérêt pour les sciences médicales et la santé humaine ?",
-                            choices: null,
+                            question: "Avez-vous une aptitude pour la vente et la négociation ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous organiser et planifier des événements ?",
-                            choices: null,
+                            question: "Avez-vous une passion pour les nouvelles technologies et les réseaux sociaux ?",
+                            choix: null
                         },
                         {
-                            question: "Avez-vous un intérêt pour l'histoire et la géographie ?",
-                            choices: null,
+                            question: "Avez-vous une passion pour l'innovation et la créativité ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous dessiner et concevoir des objets ou des plans ?",
-                            choices: null,
+                            question: "Êtes-vous à l'aise pour travailler avec les chiffres ?",
+                            choix: null
                         },
                         {
-                            question: "Avez-vous un intérêt pour la politique et les relations internationales ?",
-                            choices: null,
+                            question: "Aimez-vous résoudre des problèmes complexes en utilisant les statistiques ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous travailler avec vos mains et manipuler des objets ?",
-                            choices: null,
+                            question: "Êtes-vous intéressé(e) par la recherche et l'analyse de données ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous à l'aise pour gérer des budgets et des finances ?",
-                            choices: null,
+                            question: "Avez-vous une aptitude pour la résolution de problèmes complexes ?",
+                            choix: null
                         },
                         {
-                            question: "Avez-vous un intérêt pour la nature et l'environnement ?",
-                            choices: null,
+                            question: "Êtes-vous capable de travailler sous pression ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous curieux(se) et aimez-vous apprendre de nouvelles choses ?",
-                            choices: null,
+                            question: "Êtes-vous à l'aise pour travailler en équipe ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous enseigner et partager vos connaissances avec les autres ?",
-                            choices: null,
+                            question: "Êtes-vous capable de prendre des décisions rapidement ?",
+                            choix: null
                         },
                         {
-                            question: "Avez-vous un intérêt pour les arts et la culture ?",
-                            choices: null,
+                            question: "Êtes-vous capable de gérer des situations difficiles ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous à l'aise avec l'utilisation de la langue anglaise ?",
-                            choices: null,
+                            question: "Êtes-vous à l'aise pour travailler avec des clients ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous diriger et prendre des décisions importantes ?",
-                            choices: null,
+                            question: "Avez-vous une aptitude pour la résolution de conflits ?",
+                            choix: null
                         },
                         {
-                            question: "Avez-vous un intérêt pour les entreprises et la gestion d'entreprise ?",
-                            choices: null,
+                            question: "Avez-vous une passion pour les sciences économiques et la gestion ?",
+                            choix: null
                         }
-                    ]
-
-
+                    ],
                 },
                 resultat: {
                     prem: {
@@ -275,7 +271,7 @@ export default {
                         perc: null,
                         desc: null
                     }
-                }
+                },
             },
             settings: {
                 isStarted: false,

@@ -230,6 +230,30 @@ class IndexController extends AbstractController
 
     ];
 
+    const QST_ECO_NEW = array(
+        "Êtes-vous intéressé(e) par les questions liées à l'argent et aux finances ?" => array(3, 2, 1, 3, 2),
+        "Avez-vous une aptitude pour la gestion de projet et l'organisation ?" => array(3, 2, 3, 2, 1),
+        "Aimez-vous aider les autres à résoudre leurs problèmes et à trouver des solutions ?" => array(3, 3, 3, 1, 1),
+        "Avez-vous une passion pour la justice sociale et l'égalité ?" => array(1, 0, 0, 0, 0),
+        "Êtes-vous à l'aise pour parler en public ?" => array(2, 1, 1, 0, 1),
+        "Êtes-vous intéressé(e) par le commerce et les affaires ?" => array(0, 3, 1, 0, 1),
+        "Avez-vous une aptitude pour la vente et la négociation ?" => array(0, 3, 0, 0, 1),
+        "Avez-vous une passion pour les nouvelles technologies et les réseaux sociaux ?" => array(0, 0, 0, 0, 3),
+        "Avez-vous une passion pour l'innovation et la créativité ?" => array(0, 0, 3, 0, 1),
+        "Êtes-vous à l'aise pour travailler avec les chiffres ?" => array(2, 1, 0, 3, 0),
+        "Aimez-vous résoudre des problèmes complexes en utilisant les statistiques ?" => array(0, 0, 0, 0, 3),
+        "Êtes-vous intéressé(e) par la recherche et l'analyse de données ?" => array(0, 0, 0, 0, 3),
+        "Avez-vous une aptitude pour la résolution de problèmes complexes ?" => array(0, 0, 0, 0, 3),
+        "Êtes-vous capable de travailler sous pression ?" => array(0, 0, 0, 3, 0),
+        "Êtes-vous à l'aise pour travailler en équipe ?" => array(0, 0, 3, 0, 0),
+        "Êtes-vous capable de prendre des décisions rapidement ?" => array(0, 0, 3, 0, 0),
+        "Êtes-vous capable de gérer des situations difficiles ?" => array(0, 0, 3, 0, 0),
+        "Êtes-vous à l'aise pour travailler avec des clients ?" => array(0, 0, 3, 0, 0),
+        "Avez-vous une aptitude pour la résolution de conflits ?" => array(0, 0, 3, 0, 0),
+        "Avez-vous une passion pour les sciences économiques et la gestion ?" => array(3, 0, 3, 3, 0)
+    );
+
+
 
     #[Route('/get/qst', name: 'get.qst', methods: ["GET"])]
     public function getQst(): Response
