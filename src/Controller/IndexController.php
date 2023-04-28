@@ -131,6 +131,30 @@ class IndexController extends AbstractController
         "Êtes-vous à l'aise avec l'informatique et les nouvelles technologies ?" => [5, 3, 5, 2, 5, 1, 2, 0]
     ];
 
+    const QST_PC_NEW = [
+        "Êtes-vous intéressé(e) par les sciences ?" => array(3, 0, 0, 0, 3, 0, 0, 0),
+        "Préférez-vous les tâches qui nécessitent de la rigueur et de la précision ?" => array(2, 2, 2, 3, 2, 2, 2, 0),
+        "Aimez-vous travailler sur des projets à long terme ?" => array(2, 1, 1, 2, 2, 2, 2, 0),
+        "Avez-vous une passion pour l'environnement ?" => array(3, 0, 0, 0, 0, 0, 0, 0),
+        "Avez-vous une aptitude pour la résolution de problèmes complexes ?" => array(3, 0, 0, 0, 3, 0, 0, 0),
+        "Êtes-vous intéressé(e) par les défis de la santé ?" => array(0, 3, 0, 0, 0, 0, 0, 0),
+        "Êtes-vous attentif(ve) aux besoins des autres ?" => array(0, 3, 0, 0, 0, 0, 0, 0),
+        "Avez-vous une capacité d'écoute et de communication efficace ?" => array(0, 3, 0, 0, 0, 0, 0, 0),
+        "Aimez-vous apprendre sur les sujets liés à la médecine ?" => array(0, 3, 0, 0, 0, 0, 0, 0),
+        "Êtes-vous capable de travailler sous pression ?" => array(0, 2, 0, 2, 0, 2, 0, 2),
+
+        "Aimez-vous aider les autres à résoudre leurs problèmes et à trouver des solutions ?" => array(0, 0, 3, 0, 0, 0, 2, 0),
+        "Êtes-vous doué(e) pour la gestion de projet et l'organisation ?" => array(0, 0, 3, 2, 0, 2, 2, 0),
+        "Avez-vous une passion pour la justice sociale et l'égalité ?" => array(0, 0, 3, 0, 0, 0, 0, 0),
+        "Êtes-vous à l'aise pour parler en public ?" => array(0, 0, 2, 0, 0, 0, 0, 0),
+        "Êtes-vous intéressé(e) par la recherche et l'exploration de nouvelles idées ?" => array(0, 0, 3, 0, 0, 0, 0, 0),
+        "Avez-vous une passion pour les technologies numériques ?" => array(0, 0, 0, 0, 3, 0, 2, 0),
+        "Êtes-vous intéressé(e) par les langues étrangères ?" => array(0, 0, 0, 0, 0, 0, 2, 0),
+        "Avez-vous des compétences en analyse financière et en planification budgétaire ?" => array(0, 0, 0, 3, 0, 0, 3, 0),
+        "Aimez-vous résoudre des problèmes complexes en utilisant la technologie ?" => array(0, 0, 0, 0, 3, 0, 2, 0),
+        "Avez-vous une passion pour l'innovation et les nouvelles technologies ?" => array(0, 0, 0, 0, 3, 0, 2, 0)
+    ];
+
     const QST_SM_A_B = [
         "Êtes-vous intéressé par la science et la technologie ?" => [5, 0, 4, 3, 3, 4, 2, 0],
         "Êtes-vous intéressé par l'informatique et la technologie de l'information ?" => [4, 0, 5, 3, 2, 3, 1, 0],
@@ -200,7 +224,7 @@ class IndexController extends AbstractController
 
         switch ($type_bac) {
             case "Sciences Physiques et Chimiques":
-                $arrayQst = self::QST_PC;
+                $arrayQst = self::QST_PC_NEW;
                 break;
             case "Sciences Mathématiques A et B":
                 $arrayQst = self::QST_SM_A_B;

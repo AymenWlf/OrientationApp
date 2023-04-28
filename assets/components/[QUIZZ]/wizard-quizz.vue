@@ -38,56 +38,58 @@ export default {
                 quizz: {
                     pc: [
                         {
-                            question: "Aimez-vous les sciences et la technologie ?",
-                            choix: null
+                            question: "Êtes-vous intéressé(e) par les sciences ?",
+                            choices: null,
                         },
                         {
-                            question: "Aimez-vous résoudre des problèmes mathématiques ?",
-                            choix: null
+                            question: "Préférez-vous les tâches qui nécessitent de la rigueur et de la précision ?",
+                            choices: null,
                         },
                         {
-                            question: "Aimez-vous la physique et la chimie ?",
-                            choix: null
+                            question: "Aimez-vous travailler sur des projets à long terme ?",
+                            choices: null,
                         },
                         {
-                            question: "Êtes-vous intéressé par les langues étrangères ?",
-                            choix: null
+                            question: "Avez-vous une passion pour l'environnement ?",
+                            choices: null,
                         },
                         {
-                            question: "Aimez-vous travailler en équipe ?",
-                            choix: null
+                            question: "Avez-vous une aptitude pour la résolution de problèmes complexes ?",
+                            choices: null,
                         },
                         {
-                            question: "Êtes-vous intéressé par les métiers liés à la santé ?",
-                            choix: null
+                            question: "Êtes-vous intéressé(e) par les défis de la santé ?",
+                            choices: null,
                         },
                         {
-                            question: "Aimez-vous être créatif ou artistique ?",
-                            choix: null
+                            question: "Êtes-vous attentif(ve) aux besoins des autres ?",
+                            choices: null,
                         },
                         {
-                            question: "Avez-vous des compétences en programmation ?",
-                            choix: null
+                            question: "Avez-vous une capacité d'écoute et de communication efficace ?",
+                            choices: null,
                         },
                         {
-                            question: "Êtes-vous intéressé par la gestion d'entreprise ?",
-                            choix: null
+                            question: "Aimez-vous apprendre sur les sujets liés à la médecine ?",
+                            choices: null,
                         },
                         {
-                            question: "Avez-vous des compétences en résolution de problèmes juridiques ?",
-                            choix: null
+                            question: "Êtes-vous capable de travailler sous pression ?",
+                            choices: null,
                         },
-                        { question: "Êtes-vous à l'aise avec l'écriture ou la communication ?", choix: null },
-                        { question: "Êtes-vous intéressé par les arts visuels ou les métiers d'art ?", choix: null },
-                        { question: "Êtes-vous intéressé par les métiers de l'environnement ou de l'agriculture ?", choix: null },
-                        { question: "Êtes-vous à l'aise avec la résolution de problèmes techniques ?", choix: null },
-                        { question: "Êtes-vous intéressé par les métiers du social et de l'humanitaire ?", choix: null },
-                        { question: "Êtes-vous à l'aise avec l'analyse financière ou la comptabilité ?", choix: null },
-                        { question: "Êtes-vous intéressé par les métiers de l'audiovisuel ou de la communication digitale ?", choix: null },
-                        { question: "Êtes-vous à l'aise avec la gestion de projets ?", choix: null },
-                        { question: "Êtes-vous intéressé par les métiers de la création artistique ou du design ?", choix: null },
-                        { question: "Êtes-vous à l'aise avec l'informatique et les nouvelles technologies ?", choix: null }
+                        { question: "Aimez-vous aider les autres à résoudre leurs problèmes et à trouver des solutions ?", choix: null },
+                        { question: "Êtes-vous doué(e) pour la gestion de projet et l'organisation ?", choix: null },
+                        { question: "Avez-vous une passion pour la justice sociale et l'égalité ?", choix: null },
+                        { question: "Êtes-vous à l'aise pour parler en public ?", choix: null },
+                        { question: "Êtes-vous intéressé(e) par la recherche et l'exploration de nouvelles idées ?", choix: null },
+                        { question: "Avez-vous une passion pour les technologies numériques ?", choix: null },
+                        { question: "Êtes-vous intéressé(e) par les langues étrangères ?", choix: null },
+                        { question: "Avez-vous des compétences en analyse financière et en planification budgétaire ?", choix: null },
+                        { question: "Aimez-vous résoudre des problèmes complexes en utilisant la technologie ?", choix: null },
+                        { question: "Avez-vous une passion pour l'innovation et les nouvelles technologies ?", choix: null }
+
                     ]
+
                     ,
                     sm_a_b: [
                         {
