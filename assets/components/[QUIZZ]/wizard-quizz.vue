@@ -39,43 +39,43 @@ export default {
                     pc: [
                         {
                             question: "Êtes-vous intéressé(e) par les sciences ?",
-                            choices: null,
+                            choix: null,
                         },
                         {
                             question: "Préférez-vous les tâches qui nécessitent de la rigueur et de la précision ?",
-                            choices: null,
+                            choix: null,
                         },
                         {
                             question: "Aimez-vous travailler sur des projets à long terme ?",
-                            choices: null,
+                            choix: null,
                         },
                         {
                             question: "Avez-vous une passion pour l'environnement ?",
-                            choices: null,
+                            choix: null,
                         },
                         {
                             question: "Avez-vous une aptitude pour la résolution de problèmes complexes ?",
-                            choices: null,
+                            choix: null,
                         },
                         {
                             question: "Êtes-vous intéressé(e) par les défis de la santé ?",
-                            choices: null,
+                            choix: null,
                         },
                         {
                             question: "Êtes-vous attentif(ve) aux besoins des autres ?",
-                            choices: null,
+                            choix: null,
                         },
                         {
                             question: "Avez-vous une capacité d'écoute et de communication efficace ?",
-                            choices: null,
+                            choix: null,
                         },
                         {
                             question: "Aimez-vous apprendre sur les sujets liés à la médecine ?",
-                            choices: null,
+                            choix: null,
                         },
                         {
                             question: "Êtes-vous capable de travailler sous pression ?",
-                            choices: null,
+                            choix: null,
                         },
                         { question: "Aimez-vous aider les autres à résoudre leurs problèmes et à trouver des solutions ?", choix: null },
                         { question: "Êtes-vous doué(e) pour la gestion de projet et l'organisation ?", choix: null },
@@ -93,85 +93,86 @@ export default {
                     ,
                     sm_a_b: [
                         {
-                            question: "Êtes-vous intéressé par la science et la technologie ?",
-                            choix: null,
+                            question: "Êtes-vous intéressé(e) par les sciences ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé par l'informatique et la technologie de l'information ?",
-                            choix: null,
+                            question: "Préférez-vous les tâches qui nécessitent de la rigueur et de la précision ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé par la gestion d'entreprise ?",
-                            choix: null,
+                            question: "Aimez-vous travailler sur des projets à long terme ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous créatif et passionné par l'architecture et la conception ?",
-                            choix: null,
+                            question: "Avez-vous une passion pour l'environnement ?",
+                            choix: null
                         },
                         {
-                            question: "Avez-vous de bonnes compétences en physique et chimie ?",
-                            choix: null,
+                            question: "Avez-vous une aptitude pour la résolution de problèmes complexes ?",
+                            choix: null
                         },
                         {
-                            question: "Avez-vous un esprit logique et aimez-vous résoudre des problèmes mathématiques ?",
-                            choix: null,
+                            question: "Êtes-vous intéressé(e) par les défis de la santé ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous à l'aise avec les mathématiques et les statistiques ?",
-                            choix: null,
+                            question: "Êtes-vous attentif(ve) aux besoins des autres ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous travailler sur des projets de construction et de design urbain ?",
-                            choix: null,
+                            question: "Avez-vous une capacité d'écoute et de communication efficace ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé par l'enseignement et le partage des connaissances ?",
-                            choix: null,
+                            question: "Aimez-vous apprendre sur les sujets liés à la médecine ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé par les sciences médicales et la santé humaine ?",
-                            choix: null,
+                            question: "Êtes-vous capable de travailler sous pression ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous capable de communiquer efficacement avec les autres ?",
-                            choix: null,
+                            question: "Aimez-vous aider les autres à résoudre leurs problèmes et à trouver des solutions ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous travailler avec des enfants et des jeunes ?",
-                            choix: null,
+                            question: "Êtes-vous doué(e) pour la gestion de projet et l'organisation ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé par les sciences sociales et le comportement humain ?",
-                            choix: null,
+                            question: "Avez-vous une passion pour la justice sociale et l'égalité ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous travailler avec des ordinateurs et des logiciels ?",
-                            choix: null,
+                            question: "Êtes-vous à l'aise pour parler en public ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé par la conception de systèmes électroniques et électriques ?",
-                            choix: null,
+                            question: "Êtes-vous intéressé(e) par la recherche et l'exploration de nouvelles idées ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé par la recherche scientifique et le développement de nouvelles technologies ?",
-                            choix: null,
+                            question: "Avez-vous une passion pour les technologies numériques ?",
+                            choix: null
                         },
                         {
-                            question: "Êtes-vous intéressé par la psychologie et la santé mentale ?",
-                            choix: null,
+                            question: "Êtes-vous intéressé(e) par les langues étrangères ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous travailler avec des chiffres et des données financières ?",
-                            choix: null,
+                            question: "Avez-vous des compétences en analyse financière et en planification budgétaire ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous résoudre des problèmes complexes et travailler en équipe ?",
-                            choix: null,
+                            question: "Aimez-vous résoudre des problèmes complexes en utilisant la technologie ?",
+                            choix: null
                         },
                         {
-                            question: "Aimez-vous travailler avec des machines et des outils ?",
-                            choix: null,
+                            question: "Avez-vous une passion pour l'innovation et les nouvelles technologies ?",
+                            choix: null
                         }
+
                     ],
                     eco: [
                         {
