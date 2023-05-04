@@ -29,18 +29,10 @@ export default {
   <nav class="navbar navbar-expand-lg navbar-landing fixed-top" id="navbar">
     <div class="container">
       <a class="navbar-brand" href="/#">
-        <!-- <img
-                    src="../../styles/images/logo-nobg.png"
-                    class="card-logo card-logo-dark"
-                    alt="logo dark"
-                    height="35"
-                  />
-                  <img
-                    src="../../styles/images/logo-nobg.png"
-                    class="card-logo card-logo-light"
-                    alt="logo light"
-                    height="35"
-                  /> -->
+        <img src="../../styles/images/logo-rectangle-nobg.png" class="card-logo card-logo-dark" alt="logo dark"
+          height="50" />
+        <img src="../../styles/images/logo-rectangle-nobg.png" class="card-logo card-logo-light" alt="logo light"
+          height="50" />
       </a>
       <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -54,25 +46,28 @@ export default {
                       <a class="nav-link active" href="#search">Trouver un notaire</a>
                     </li> -->
           <li class="nav-item">
-            <a class="nav-link active2" href="#hero">Logiciel Notaire</a>
+            <a class="nav-link active2" href="#quiz">Test d'orientation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projet">Notre projet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#objectifs">Objectifs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#fonctionalites">Fonctionalités</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#mobilite">Mobilité</a>
+            <a class="nav-link" href="#ccm">Comment ça marche ?</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#faq">FAQ ?</a>
-          </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
-          </li>
+          </li> -->
         </ul>
 
         <div class="">
           <div class="btns-vitrine text-center my-3 my-sm-0">
-            <a href="/login" class="btn btn-primary">Administration</a>
+            <a href="#contact" class="btn btn-primary">Contact</a>
           </div>
         </div>
       </div>

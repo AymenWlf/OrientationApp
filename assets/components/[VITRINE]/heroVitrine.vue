@@ -34,7 +34,7 @@ export default {
 
 <template>
   <!-- start hero section -->
-  <section class="section pb-5 hero-section mb-5" id="hero">
+  <section class="section pb-5 hero-section mb-5" id="quiz">
     <div class="bg-overlay bg-overlay-pattern"></div>
     <div class="container">
       <div class="row justify-content-center">

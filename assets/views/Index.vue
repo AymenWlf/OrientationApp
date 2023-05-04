@@ -38,7 +38,7 @@ export default {
 
 <template>
   <div class="layout-wrapper landing">
-    <!-- <HeaderVitrine /> -->
+    <HeaderVitrine />
     <HeroVitrine />
     <!-- start cta -->
     <section class="py-5 bg-primary position-relative">

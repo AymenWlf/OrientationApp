@@ -72,6 +72,10 @@
                 &:focus {
                     color: $success !important;
                 }
+
+                &.active2 {
+                    color: $danger !important;
+                }
             }
         }
     }
