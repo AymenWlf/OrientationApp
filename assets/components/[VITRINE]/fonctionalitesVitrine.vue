@@ -5,7 +5,7 @@
         <div class="col-lg-8">
           <div class="text-center mb-5">
             <h2 class="mb-3 fw-semibold lh-base">Les Fonctionalités</h2>
-            <p class="text-muted">Voici les principales fonctionnalités de NotaryDesk</p>
+            <p class="text-muted">Voici les principales fonctionnalités de E-Tawjihi</p>
           </div>
         </div>
       </div>
@@ -20,10 +20,10 @@
               </div>
             </div>
             <div class="flex-grow-1">
-              <h5 class="fs-18">Gestion des clients</h5>
+              <h5 class="fs-18">Tests d'orientation</h5>
               <p class="text-muted my-3 ff-success">
-                Vous aurez la possibilité d'ajouter supprimer et modifier vos clients
-                physiques et morals
+                Tests d'orientation qui aident les étudiants à prendre conscience des options de filière possibles grâce à
+                des questionnaires et des traitements intelligents.
               </p>
               <div></div>
             </div>
@@ -39,10 +39,11 @@
               </div>
             </div>
             <div class="flex-grow-1">
-              <h5 class="fs-18">Gestion des propriétés</h5>
+              <h5 class="fs-18">Outils
+                d'auto-évaluation</h5>
               <p class="text-muted my-3 ff-success">
-                Vous aurez la possibilité d'ajouter supprimer et modifier les propriétés
-                propres aux dossiers
+                Outils d'auto-évaluation pour aider les étudiants à identifier leurs points forts et faibles dans chaque
+                domaine ou filière grâce à des questionnaires et des traitements intelligents.
               </p>
               <div></div>
             </div>
@@ -58,10 +59,10 @@
               </div>
             </div>
             <div class="flex-grow-1">
-              <h5 class="fs-18">Gestion des dossiers</h5>
+              <h5 class="fs-18">Informations sur les établissements</h5>
               <p class="text-muted my-3 ff-success">
-                Vous aurez la possibilité d'ouvrir et de modifier vos dossiers suivant une
-                feuille de route mise en place par notre système
+                Informations détaillées sur les établissements d'enseignement, y compris les universités, les facultés,
+                les écoles et les centres de formations (Privé et Public)...
               </p>
               <div></div>
             </div>
@@ -77,10 +78,10 @@
               </div>
             </div>
             <div class="flex-grow-1">
-              <h5 class="fs-18">Comptabilité interne</h5>
+              <h5 class="fs-18">Conseils sur les choix de carrière </h5>
               <p class="text-muted my-3 ff-success">
-                Vous aurez la possibilité de tracker et de suivre les flux monétaires dans
-                vos dossiers
+                Conseils personnalisés sur les choix de carrière, y compris des informations sur les tendances du marché
+                du travail, les salaires, les perspectives d'emploi et les compétences requises pour différents emplois...
               </p>
               <div></div>
             </div>
@@ -96,10 +97,10 @@
               </div>
             </div>
             <div class="flex-grow-1">
-              <h5 class="fs-18">Gestion des documents</h5>
+              <h5 class="fs-18">Forum de discussion</h5>
               <p class="text-muted my-3 ff-success">
-                Vous aurez la possibilité de générer et archivé des documents tels que les
-                factures, devis, fiche clients ...
+                Forums de discussions pour permettre aux étudiants d'échanger des informations, de poser des questions et
+                d'obtenir des conseils auprès des professionnels et des chatbot en intelligence artificielle.
               </p>
               <div></div>
             </div>
@@ -115,10 +116,10 @@
               </div>
             </div>
             <div class="flex-grow-1">
-              <h5 class="fs-18">Notifications et Alerts</h5>
+              <h5 class="fs-18">Suivi des progrès</h5>
               <p class="text-muted my-3 ff-success">
-                Vous serez notifié sur chaque actualité de vos dossiers et alerté sur les
-                délais
+                Nous fournissons des outils de suivi des progrès pour aider les étudiants à suivre leur parcours éducatif
+                et professionnel et à identifier les étapes clés pour atteindre leurs objectifs.
               </p>
               <div></div>
             </div>

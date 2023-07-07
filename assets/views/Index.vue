@@ -1,34 +1,20 @@
 <script>
-import WizardQuizz from "../components/[QUIZZ]/wizard-quizz.vue";
-import AboutVitrine from "../components/[VITRINE]/aboutVitrine.vue";
-import ContactVitrine from "../components/[VITRINE]/contactVitrine.vue";
 import CtaVitrine from "../components/[VITRINE]/ctaVitrine.vue";
-import FaqVitrine from "../components/[VITRINE]/faqVitrine.vue";
-import FonctionalitesVitrine from "../components/[VITRINE]/fonctionalitesVitrine.vue";
 import FooterVitrine from "../components/[VITRINE]/footerVitrine.vue";
 import HeaderVitrine from "../components/[VITRINE]/headerVitrine.vue";
+import ProjetVitrine from "../components/[VITRINE]/projetVitrine.vue";
 import HeroVitrine from "../components/[VITRINE]/heroVitrine.vue";
-import MobiliteVitrine from "../components/[VITRINE]/mobiliteVitrine.vue";
-import NotarySearchVitrine from "../components/[VITRINE]/NotarySearchVitrine.vue";
-import PartenaireVitrine from "../components/[VITRINE]/partenaireVitrine.vue";
-import SearchHeroVitrine from "../components/[VITRINE]/searchHeroVitrine.vue";
+import FonctionalitesVitrine from "../components/[VITRINE]/fonctionalitesVitrine.vue";
 
 export default {
   name: "Index",
   components: {
     HeaderVitrine,
     HeroVitrine,
-    PartenaireVitrine,
-    FooterVitrine,
-    ContactVitrine,
-    AboutVitrine,
-    MobiliteVitrine,
     CtaVitrine,
+    ProjetVitrine,
     FonctionalitesVitrine,
-    FaqVitrine,
-    NotarySearchVitrine,
-    SearchHeroVitrine,
-    WizardQuizz,
+    FooterVitrine
   },
   data() {
     return {};
@@ -38,7 +24,7 @@ export default {
 
 <template>
   <div class="layout-wrapper landing">
-    <HeaderVitrine />
+    <!-- <HeaderVitrine /> -->
     <HeroVitrine />
     <!-- start cta -->
     <section class="py-5 bg-primary position-relative">
@@ -65,6 +51,8 @@ export default {
       <!-- end container -->
     </section>
     <!-- end cta -->
+    <!-- <ProjetVitrine /> -->
+    <!-- <FonctionalitesVitrine /> -->
     <FooterVitrine />
   </div>
 </template>
